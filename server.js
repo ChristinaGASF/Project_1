@@ -10,10 +10,8 @@ app.use(function(req, res, next) {
     next();
   });   
 
-
-
 // bodyParser = require('body-parser'),
-// db = require('./models');
+const db = require('./models');
 // ctrl = require('./controllers');
 
 // app.use(bodyParser.urlencoded({ extended: true}));
