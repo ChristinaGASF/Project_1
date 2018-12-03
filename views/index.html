@@ -10,11 +10,15 @@
     <title>Project_1</title>
     <!--Google Platform Library -->
     <!--You must include the Google Platform Library on your web pages that integrate Google Sign-In.-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/buttons.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
 </head>
 <body>
+  
+    <div class="container">
     <!--Google Sign-In button that uses the default settings,-->
     <div class="g-signin2" data-onsuccess="onSignIn">Sign in</div>
 
@@ -26,7 +30,7 @@
  
 
     <!--Sign out a user-->
-    <a href="#" onclick="signOut();">Sign out</a>
+    <button class="signout-button"><a href="#" onclick="signOut();">Sign out</a></button>
     <script>
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
@@ -42,6 +46,7 @@
           console.log('User signed out.');
         });
       }
-    </script>   
+    </script>  
+    </div> 
 </body>
 </html>
