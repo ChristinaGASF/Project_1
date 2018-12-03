@@ -16,7 +16,10 @@ $.ajax({
 function handleSuccess (json) {
     var food = json.data
     food.forEach( food => {
-
+// return a string built using a template literal, need to add properties:
+$('#food').append(`<p>${food.name}, the ${food."#property"}.</p>`);
+    });
+}
 
 //Error
 function handleError(e) {
