@@ -11,3 +11,17 @@ $.ajax({
     success: handleSuccess,
     error: handleError
 });
+
+//Success
+function handleSuccess (json) {
+    var food = json.data
+    food.forEach( food => {
+
+
+//Error
+function handleError(e) {
+    console.log('error', e);
+    $('#foodTarget').text('Failed to load.');
+}
+
+});
