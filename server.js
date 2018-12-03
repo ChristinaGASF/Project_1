@@ -17,12 +17,18 @@ const db = require('./models');
 // app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.json());
 
+// ROUTES
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
+
 
 // HTML ENDPOINTS //
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
   });
 
-app.listen(3000);
+//SERVER
+// listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Express server is up and running on http://localhost:3000/');
+  });
