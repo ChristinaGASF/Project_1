@@ -1,11 +1,20 @@
-// require modules
+// require express and other modules
+const express = require('express');
+const app = express();
 
-const 
-    express = require('express'),
-    app = express();
-    // bodyParser = require('body-parser'),
-    // db = require('./models');
-    // ctrl = require('./controllers');
+// allow cross origin requests (optional)
+// https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });   
+
+
+
+// bodyParser = require('body-parser'),
+// db = require('./models');
+// ctrl = require('./controllers');
 
 // app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.json());
