@@ -3,5 +3,5 @@ mongoose.connect('mongodb://localhost/associations', { useNewUrlParser: true } )
 
 module.exports = {
     User : require('./user'),
-    Restaurant : require('./ingredient'),
+    Restaurant : require('./restaurant'),
 }
