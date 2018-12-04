@@ -1,5 +1,5 @@
-body {
-    /* background-color: #D4CAB1; */
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 h1,
@@ -27,17 +27,21 @@ ul a {
 }
 
 
-/* .about-me {
+.about-me {
     border-bottom: 2px solid #FF6E69;
-} */
+}
 
 
 .recent-eats {
     margin-top: 5em;
 }
 
+.recent-restaurants {
+    margin-top: 10em;
+}
+
 h4 {
-    padding-bottom: 2em;
+    margin-top: 2em;
 }
 
 h5 {
