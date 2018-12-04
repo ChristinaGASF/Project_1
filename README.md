@@ -1,5 +1,12 @@
-# Project One
+# Project One [Food-To-Do App]
 #### This project is being developed to fulfill the requirement to graduate WDI course at General Assembly (SF). The project is an assignment to be be done in a group that has Bijaya, Christina and Kenny as members.
+
+Color Palette:
+#BC0402
+#FF6E69
+#ECBB5C
+#D4CAB1
+#2A222D
 
 Technologies Requirements:
 Express API - both HTML and JSON endpoints
