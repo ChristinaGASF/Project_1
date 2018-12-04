@@ -47,14 +47,14 @@ app.get('/restaurant', (req, res) => {
 // PROFILE (location? should this be in user.js?)
 app.get('./user', (req, res) => {
     res.json({
-      name: "",
-      message: "",
-      githubUsername: "", 
-      githubLink: "",
-      personalSiteLink: "",
-      githubProfileImage:"",
+      name: "Homer Jay Simpson",
+      message: "D'oh!",
+      wife: "Marge Simpson", 
+      parentNames: "Abe Simpson + Mona Simpson",
+      childrenNames: "Bart, Lisa, and Maggie",
+      profileImage:"https://vignette.wikia.nocookie.net/simpsons/images/7/7f/Mmm.jpg/revision/latest?cb=20121205194537",
       currentCity: "San Francisco, California",
-      homeTown: "",
+      homeTown: "Springfield",
     })
   });
 
