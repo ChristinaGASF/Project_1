@@ -43,6 +43,8 @@ app.get('/restaurant', (req, res) => {
       ]
     })
   });
+
+// PROFILE (location? should this be in user.js?)
 app.get('./user', (req, res) => {
     res.json({
       name: "",
@@ -56,8 +58,8 @@ app.get('./user', (req, res) => {
     })
   });
 
-  //get all restaurant request
-app.get('/restaurant', (req, res) => {
+// GET ALL restaurant request
+    app.get('/restaurant', (req, res) => {
     //find all restaurants in db
     db.Restaurant.find( {}, (err, allRestaurants) => {
       //if err, send err
@@ -68,7 +70,7 @@ app.get('/restaurant', (req, res) => {
       });
     });
 
-      //get a specific restaurant by id
+// GET a specific restaurant by ID
   app.get('/restaurant:id' , (req, res) => {
     //get id from url parameters
     let restaurantId = req.params.id;
@@ -78,6 +80,19 @@ app.get('/restaurant', (req, res) => {
       res.json(foundRestaurant);
     });
   });
+
+// CREATE a new restaurant
+    app.post('/api/restaurant' , (req,res) => {
+        //grab what the user entered in the body
+        console.log(req.body);
+        let newRestaurant = req.body;
+        //take the req body and create a new restaurant in the db
+        db.Restaurant.create( newRestaurant, (err,savedRestaurant) => {
+          if(err) {return console.log(err)};
+          res.json(savedRestaurant);
+        });
+      });
+    
 
 //SERVER
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
