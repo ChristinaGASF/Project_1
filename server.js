@@ -82,7 +82,7 @@ app.get('./user', (req, res) => {
   });
 
 // CREATE a new restaurant
-    app.post('/api/restaurant' , (req,res) => {
+    app.post('/restaurant' , (req,res) => {
         //grab what the user entered in the body
         console.log(req.body);
         let newRestaurant = req.body;
@@ -92,7 +92,38 @@ app.get('./user', (req, res) => {
           res.json(savedRestaurant);
         });
       });
+
+// UPDATE a restaurant
+  app.put('/restaurant/:id', (req,res) => {
+    //get restaurant by id from url params
+    let restaurantId = req.params.id;
+    //get updated body from req.body
+    let updatedBody = req.body;
+
+    // find and update the restaurant's attributes
+    db.Restaurant.findOneAndUpdate(
+      {_id:restaurantId}, // search condition
+      updatedBody, // new content to update
+      {new:true}, // we want to receive the new object
+      (err, updatedRestaurant) => { //callback
+        if(err) {return console.log(err)};
+        res.json(updatedRestaurant);
+      });
+  });
+
+// DELETE a restaurant
+    app.delete('/restaurant/:id', (req,res) => {
+        //get the restaurant id from the url params
+        let restaurantId = req.params.id;
     
+        // find the restaurant by id and delete it
+        db.Restaurant.deleteOne(
+          {_id:restaurantId},
+          (err, deletedId) => {
+            if(err) {return console.log(err)};
+            res.json(deletedId);
+          });
+      });
 
 //SERVER
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
