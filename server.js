@@ -56,6 +56,18 @@ app.get('./user', (req, res) => {
     })
   });
 
+  //get all restaurant request
+app.get('/restaurant', (req, res) => {
+    //find all restaurants in db
+    db.Restaurant.find( {}, (err, allRestaurants) => {
+      //if err, send err
+      if(err){console.log(err)};
+      //else, respond with a json object of all the restaurants
+      // console.log(allRestaurant);
+      res.json({data: allRestaurants});
+      });
+    });
+
 //SERVER
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
 app.listen(process.env.PORT || 3000, () => {
