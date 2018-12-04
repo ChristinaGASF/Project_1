@@ -68,6 +68,17 @@ app.get('/restaurant', (req, res) => {
       });
     });
 
+      //get a specific restaurant by id
+  app.get('/restaurant:id' , (req, res) => {
+    //get id from url parameters
+    let restaurantId = req.params.id;
+  //find restaurant in db by id
+    db.Restaurant.findById( restaurantId , (err, foundRestaurant) => {
+      if(err) { return console.log(err) };
+      res.json(foundRestaurant);
+    });
+  });
+
 //SERVER
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
 app.listen(process.env.PORT || 3000, () => {
