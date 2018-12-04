@@ -110,7 +110,20 @@ app.get('./user', (req, res) => {
         res.json(updatedRestaurant);
       });
   });
+
+// DELETE a restaurant
+    app.delete('/restaurant/:id', (req,res) => {
+        //get the restaurant id from the url params
+        let restaurantId = req.params.id;
     
+        // find the restaurant by id and delete it
+        db.Restaurant.deleteOne(
+          {_id:restaurantId},
+          (err, deletedId) => {
+            if(err) {return console.log(err)};
+            res.json(deletedId);
+          });
+      });
 
 //SERVER
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
