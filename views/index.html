@@ -10,15 +10,20 @@
     <title>Project_1</title>
     <!--Google Platform Library -->
     <!--You must include the Google Platform Library on your web pages that integrate Google Sign-In.-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Load the Google Platform Library-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
 </head>
 <body>
-  
     <div class="container">
+    <h3>Welcome to Yelp Me</h3>
+
     <!--Google Sign-In button that uses the default settings,-->
     <div class="g-signin2" data-onsuccess="onSignIn">Sign in</div>
 
@@ -29,10 +34,21 @@
     <!-- <div class="userContent" style="display: none;"></div> -->
     <div class="userContent"></div>
 
- 
 
     <!--Sign out a user-->
     <button class="signout-button"><a href="#" onclick="signOut();">Sign out</a></button>
+
+    <div class="intro">
+      <p>
+        This is a website that will give you an idea which restaurant to go for the best menu in the city of San Francisco.
+      </p>
+
+      <p>
+        <strong>Instruction</strong>: Once you click the sign in button it will navigate you to the Google sign in window. You can sign in to this website using Google OAuth2 sign in method. You do not require to enter any of your credentials here to sign in. 
+      </p>
+    </div>
+
+    </div>
     <script>
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
@@ -49,6 +65,5 @@
         });
       }
     </script>  
-    </div> 
 </body>
 </html>

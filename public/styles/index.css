@@ -1,0 +1,36 @@
+
+body {
+    background-color: skyblue;
+}
+
+h3 {
+    font-style: oblique;
+    color: green;
+}
+
+.front {
+    width: 400px;
+    height: 200px;
+    margin: 5px;
+    padding: 2px;
+    border: 2px green solid;
+    border-radius: 5px;
+    background-color: cornsilk;
+}
+
+.signout-button {
+    width: 350px;
+    height: 40px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro {
+    width: 50%;
+    text-align: justify;
+}
