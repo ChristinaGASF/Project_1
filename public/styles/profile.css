@@ -1,17 +1,26 @@
-
 body {
-    background-color: #D4CAB1;
+    /* background-color: #D4CAB1; */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: "Montserrat", sans-serif;
 }
 
-nav {
-}
 .nav-wrapper {
     background-color: #BC0402;
 }
+
+.brand-logo {
+    margin-left: 2%;
+}
+
+.profile-pic {
+    margin-left: 2em;
+    /* border: 5px solid #D4CAB1; */
+}
+
 
 .about-me {
     border-bottom: 2px solid #FF6E69;
@@ -22,11 +31,6 @@ p {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-.profile-pic {
-    margin-left: 2em;
-    border: 5px solid #2A222D;
-}
-
 .checked {
     color: #ECBB5C;
 }
@@ -34,7 +38,3 @@ p {
 .row {
     margin-top: 2em;
 }
-
-.recent-eats {
-}
-

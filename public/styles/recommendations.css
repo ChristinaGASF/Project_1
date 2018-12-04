@@ -1,0 +1,15 @@
+.nav-wrapper {
+    background-color: #BC0402;
+}
+
+.brand-logo {
+    margin-left: 2%;
+}
+
+.bg-container {
+    background-color: #000000;
+}
+
+.bg-container img {
+    opacity: 0.5;
+}
