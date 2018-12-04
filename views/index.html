@@ -10,21 +10,44 @@
     <title>Foods-To-Do</title>
     <!--Google Platform Library -->
     <!--You must include the Google Platform Library on your web pages that integrate Google Sign-In.-->
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
     <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/index.css" />
-=======
+<!-- ======= -->
     <link rel="stylesheet" type="text/css" media="screen" href="/public/styles/index.css" />
->>>>>>> 0541f0eee9535c6813cc2ff6ced0f3224f75f59b
+<!-- >>>>>>> 0541f0eee9535c6813cc2ff6ced0f3224f75f59b -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <!--Load the Google Platform Library-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
 </head>
 <body>
+    <section class="nav-container">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo left">Foods-To-Do</a>
+                <a href="" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="recommendations.html">Recommendations</a></li>
+                    <li><a href="profile.html"><i class="material-icons">account_circle</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="recommendations.html">Recommendations</a></li>
+            <li><a href="profile.html"><i class="material-icons">account_circle</i></a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
+    </section>
     <div class="container">
     <h3>Welcome to Foods-To-Do</h3>
 
@@ -53,6 +76,7 @@
     </div>
 
     </div>
+    <!-- SCRIPTS -->
     <script>
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
@@ -69,5 +93,9 @@
         });
       }
     </script>  
+    <script src="/public/scripts/profile.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -22,4 +22,9 @@ ul a {
 
 .restaurant-cards {
     width: 16.666%;
+    border: 2px solid blue;
+}
+
+.card-container {
+    border: 2px solid red;
 }

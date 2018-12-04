@@ -39,8 +39,12 @@ h4 {
     padding-bottom: 2em;
 }
 
+h5 {
+    font-weight: bolder;
+}
+
 p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-family: 'PT Serif', serif;
 }
 
