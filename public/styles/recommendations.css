@@ -2,14 +2,24 @@
     background-color: #BC0402;
 }
 
+ul a {
+    font-family: 'PT Serif', serif;
+}
+
 .brand-logo {
     margin-left: 2%;
 }
 
-.bg-container {
+/* .bg-container {
     background-color: #000000;
-}
+    background-image: url("/public/images/sf-background.jpg");
+} */
 
-.bg-container img {
+/* .bg-container img {
+    
     opacity: 0.5;
+} */
+
+.restaurant-cards {
+    width: 16.666%;
 }

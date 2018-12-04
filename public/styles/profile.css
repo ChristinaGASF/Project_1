@@ -8,6 +8,10 @@ h3 {
     font-family: "Montserrat", sans-serif;
 }
 
+ul a {
+    font-family: 'PT Serif', serif;
+}
+
 .nav-wrapper {
     background-color: #BC0402;
 }
@@ -22,13 +26,22 @@ h3 {
 }
 
 
-.about-me {
+/* .about-me {
     border-bottom: 2px solid #FF6E69;
+} */
+
+
+.recent-eats {
+    margin-top: 5em;
+}
+
+h4 {
+    padding-bottom: 2em;
 }
 
 p {
     font-size: 1.5rem;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'PT Serif', serif;
 }
 
 .checked {

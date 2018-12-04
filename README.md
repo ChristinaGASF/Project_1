@@ -1,5 +1,5 @@
-# Project One [Food-To-Do App]
-#### This project is being developed to fulfill the requirement to graduate WDI course at General Assembly (SF). The project is an assignment to be be done in a group that has Bijaya, Christina and Kenny as members.
+# Project One [Foods-To-Do App]
+#### This project is being developed to fulfill the requirement to graduate the WDI course at General Assembly (SF). The project is an assignment to be be done in a group that has Bijaya, Christina and Kenny as members.
 
 <<<<<<< HEAD
 ### Technologies Requirements:
