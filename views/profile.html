@@ -21,14 +21,21 @@
     <section>
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo right">Profile</a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <a href="#" class="brand-logo left">FoodToDo</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="recommendations.html">Recommendations</a></li>
                     <li><a href="profile.html">My Profile</a></li>
                 </ul>
             </div>
         </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+        </ul>
 
     </section>
     <div class="about-me col s12 m8 offset-m2 l6 offset-l3">
@@ -37,7 +44,7 @@
                 <img src="/public/images/default_profile.png" alt="profilepic" class="profile-pic circle responsive-img right">
             </div>
             <div class="col s10">
-                <h2 class="s4 m6 l8">About Me</h2>
+                <h2 class="s4 m6 l8">Peter Griffin</h2>
                 <p>
                     I like food. I'm always hungry.
                 </p>
@@ -46,7 +53,7 @@
     </div>
     <section class="recent-eats col s12">
         <div class="row center-align">
-            <h3 class="col s12 center-align">Recent Eats</h3>
+            <h4 class="col s12 center-align">Recent Eats</h4>
             <div class="left-column col s12 m12 l4">
                 <a href="https://boudinbakery.com/home/">
                     <img src="/public/images/boudin.jpeg" alt="Boudin" class="responsive-img">
@@ -61,6 +68,7 @@
                     <span class="fa fa-star checked"></span>
                 </p>
             </div>
+
             <div class="middle-column col s12 m12 l4">
                 <a href="http://sunsetbeersf.com/">
                     <img src="/public/images/sunsetreservoir.png" alt="Sunset-Reservoir" class="responsive-img">

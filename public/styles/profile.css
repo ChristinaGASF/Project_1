@@ -1,5 +1,5 @@
 body {
-    background-color: #D4CAB1;
+    /* background-color: #D4CAB1; */
 }
 
 h1,
@@ -12,9 +12,13 @@ h3 {
     background-color: #BC0402;
 }
 
+.brand-logo {
+    margin-left: 2%;
+}
+
 .profile-pic {
     margin-left: 2em;
-    border: 5px solid #2A222D;
+    /* border: 5px solid #D4CAB1; */
 }
 
 
@@ -26,7 +30,6 @@ p {
     font-size: 1.5rem;
     font-family: 'Open Sans Condensed', sans-serif;
 }
-
 
 .checked {
     color: #ECBB5C;
