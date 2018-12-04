@@ -4,6 +4,7 @@
 var db = require('./models');
 
 var restaurant_list = [
+
 {
     name: "input data here - expects String",
     type: "input data here - expects String",
@@ -11,6 +12,28 @@ var restaurant_list = [
     image: "input data here - expects String",
     id: "input data here - expects Number",
 },
+{
+    name: "Boudin Bakery Cafe",
+    type: "Bakery",
+    rating: "3.9",
+    image: "boudin.jpeg",
+    id: "",
+},
+{
+    name: "Sunset Reservoir",
+    type: "Brewery",
+    rating: "4.2",
+    image: "sunsetreservoir.png",
+    id: "",
+},
+{
+    name: "The Table",
+    type: "New American",
+    rating: "4.3",
+    image: "thetable.jpg",
+    id: "",
+},
+
 ]
 
 db.Restaurant.create(Restaurant_list, (err, newRestaurant) => {
