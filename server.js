@@ -27,6 +27,20 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
   });
 
+// JSON ENDPOINTS
+app.get('./user', (req, res) => {
+    res.json({
+      name: "",
+      message: "",
+      githubUsername: "", 
+      githubLink: "",
+      personalSiteLink: "",
+      githubProfileImage:"",
+      currentCity: "San Francisco, California",
+      homeTown: "",
+    })
+  });
+
 //SERVER
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
 app.listen(process.env.PORT || 3000, () => {
