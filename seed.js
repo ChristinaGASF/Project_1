@@ -16,19 +16,22 @@ var restaurant_list = [
     name: "Boudin Bakery Cafe",
     type: "Bakery",
     rating: "3.9",
-    image: "boudin.jpeg"
+    image: "./public/images/boudin.jpeg",
+    website: "https://boudinbakery.com/home/"
 },
 {
     name: "Sunset Reservoir",
     type: "Brewery",
     rating: "4.2",
-    image: "sunsetreservoir.png"
+    image: "sunsetreservoir.png",
+    website: "http://www.sunsetbeersf.com/home"
 },
 {
     name: "The Table",
     type: "New American",
     rating: "4.3",
-    image: "thetable.jpg"
+    image: "thetable.jpg",
+    website: "http://www.thetablesj.com/"
 },
 
 ]
