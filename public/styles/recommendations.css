@@ -10,21 +10,27 @@ ul a {
     margin-left: 2%;
 }
 
-/* .bg-container {
-    background-color: #000000;
-    background-image: url("/public/images/sf-background.jpg");
-} */
-
-/* .bg-container img {
-    
-    opacity: 0.5;
-} */
-
-.restaurant-cards {
-    width: 16.666%;
-    border: 2px solid blue;
+::placeholder {
+    color: #BC0402;
 }
 
-.card-container {
-    border: 2px solid red;
+.submit-form input {
+    background-color: #BC0402;
+    color: white;
+    border: transparent;
+    height: 2em;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.row {
+    margin-top: 2em;
+}
+
+.card-title {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.card-action a {
+    color: #ECBB5C
 }

@@ -21,8 +21,9 @@ ul a {
 }
 
 .profile-pic {
-    margin-left: 2em;
-    /* border: 5px solid #D4CAB1; */
+    height: 100px;
+    width: 150px;
+    border: 5px solid #D4CAB1;
 }
 
 
