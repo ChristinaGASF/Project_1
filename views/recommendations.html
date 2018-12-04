@@ -7,7 +7,7 @@
     <title>Recommendations</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="/public/styles/recommendations.css" />
+    <link rel="stylesheet" href="/styles/recommendations.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,29 +20,30 @@
     <section class="nav-container">
         <nav>
             <div class="nav-wrapper">
-                <a href="index.html" class="brand-logo left">Foods-To-Do</a>
+                <a href="/" class="brand-logo left">Foods-To-Do</a>
                 <a href="" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="recommendations.html">Recommendations</a></li>
-                    <li><a href="profile.html"><i class="material-icons">account_circle</i></a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="recommendations">Recommendations</a></li>
+                    <li><a href="profile"><i class="material-icons">account_circle</i></a></li>
                 </ul>
             </div>
         </nav>
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="recommendations.html">Recommendations</a></li>
-            <li><a href="profile.html"><i class="material-icons">account_circle</i></a></li>
-            <li><a href="mobile.html">Mobile</a></li>
+            <li><a href="profile"><i class="material-icons">account_circle</i></a></li>
+            <li><a href="mobile">Mobile</a></li>
         </ul>
     </section>
 
+<!-----------------------------------------------------------------RESTAURANT CARDS--------------------------------------------------------->
     <section class="main s6 row">
         <div class="row s6">
             <div class="col s12 m3 l2 push-l1">
                 <div class="card">
                     <div class="card-image">
-                        <img src="/public/images/akiko.jpg">
+                        <img src="/images/akiko.jpg">
                         <span class="card-title">Akiko's</span>
                     </div>
                     <div class="card-content">
@@ -58,7 +59,7 @@
             <div class="col s12 m3 l2 push-l1">
                 <div class="card">
                     <div class="card-image">
-                        <img src="/public/images/house-of-bagels.jpg">
+                        <img src="/images/house-of-bagels.jpg">
                         <span class="card-title">House of Bagels</span>
                     </div>
                     <div class="card-content">
@@ -71,6 +72,7 @@
                 </div>
             </div>
 
+<!--------------------------------------------------------------FORM------------------------------------------------------------------------->
             <section class="form-container">
                     <form class="col s12 l4 push-l3">
                         <div class="row">
@@ -106,7 +108,7 @@
         </div>
         
 
-        <div class="row s6">
+        <!-- <div class="row s6">
             <div class="col s12 m3 l2 push-l1">
                 <div class="card">
                     <div class="card-image">
@@ -121,9 +123,9 @@
                         <a href="https://www.boulevardrestaurant.com/">Boulevard</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
-            <div class="col s12 m3 l2 push-l1">
+            <!-- <div class="col s12 m3 l2 push-l1">
                 <div class="card">
                     <div class="card-image">
                         <img src="/public/images/tacolicious.jpg">
@@ -137,16 +139,23 @@
                         <a href="https://www.tacolicious.com/">Tacolicious</a>
                     </div>
                 </div>
+            </div> -->
+
+            <div>
+                <label id="restaurant"></label>
             </div>
+
+
         </div>
     </section>
 
 
     <!-- SCRIPTS -->
-    <script src="/public/scripts/recommendations.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/scripts/app.js"></script>
 </body>
 
 </html>

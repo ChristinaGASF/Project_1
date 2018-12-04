@@ -27,22 +27,32 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
   });
 
+  // HTML ENDPOINTS //
+app.get('/recommendations', (req, res) => {
+  res.sendFile(__dirname + '/views/recommendations.html');
+});
+
+  // HTML ENDPOINTS //
+  app.get('/profile', (req, res) => {
+    res.sendFile(__dirname + '/views/profile.html');
+  });
+  
 // JSON ENDPOINTS
 // Document all your endpoints below as a simple hardcoded JSON object.
 // need to double check paths as file structure get updated
-app.get('/restaurant', (req, res) => {
-    res.json({
-      endpoints: [
-        {method: "GET", path: "/", description: "Describes all available endpoints"},
-        {method: "GET", path: "/user", description: "About User"},
-        {method: "GET", path: "/restaurant", description: "View list of all recommended restaurants"}, 
-        {method: "GET", path: "/restaurant/:id", description: "View a specific restaurant by id"}, 
-        {method: "POST", path: "/restaurant", description: "Create a new restaurant"},
-        {method: "PUT", path: "/restaurant/:id", description: "Update a restaurant"}, 
-        {method: "DELETE", path: "/restaurant/:id", description: "Delete a specific restaurant by id"} 
-      ]
-    })
-  });
+// app.get('/restaurant', (req, res) => {
+//     res.json({
+//       endpoints: [
+//         {method: "GET", path: "/", description: "Describes all available endpoints"},
+//         {method: "GET", path: "/user", description: "About User"},
+//         {method: "GET", path: "/restaurant", description: "View list of all recommended restaurants"}, 
+//         {method: "GET", path: "/restaurant/:id", description: "View a specific restaurant by id"}, 
+//         {method: "POST", path: "/restaurant", description: "Create a new restaurant"},
+//         {method: "PUT", path: "/restaurant/:id", description: "Update a restaurant"}, 
+//         {method: "DELETE", path: "/restaurant/:id", description: "Delete a specific restaurant by id"} 
+//       ]
+//     })
+//   });
 
 // PROFILE (location? should this be in user.js?)
 app.get('./user', (req, res) => {
@@ -66,7 +76,7 @@ app.get('./user', (req, res) => {
       if(err){console.log(err)};
       //else, respond with a json object of all the restaurants
       // console.log(allRestaurant);
-      res.json({data: allRestaurants});
+      res.json(allRestaurants);
       });
     });
 
