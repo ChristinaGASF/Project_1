@@ -1,5 +1,20 @@
+
+body {
+    background-color: #D4CAB1;
+}
+
 h1, h2, h3 {
     font-family: "Montserrat", sans-serif;
+}
+
+nav {
+}
+.nav-wrapper {
+    background-color: #BC0402;
+}
+
+.about-me {
+    border-bottom: 2px solid #FF6E69;
 }
 
 p {
@@ -9,10 +24,11 @@ p {
 
 .profile-pic {
     margin-left: 2em;
+    border: 5px solid #2A222D;
 }
 
 .checked {
-    color: goldenrod;
+    color: #ECBB5C;
 }
 
 .row {
