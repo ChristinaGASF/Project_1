@@ -32,9 +32,9 @@ $(document).ready(function () {
                         </article>
                         <div class="card-action">
                         
-                        <a href="${restaurant.website}">${restaurant.name}
+                        <a href="${restaurant.website}">${restaurant.name}</a>
+                        <i class="material-icons right delete-icon">close</i>
                         
-                        <i class="material-icons right">close</i>
                         
                         </div>
                     </div>
@@ -90,11 +90,49 @@ $(document).ready(function () {
                                 <p>Rating: ${restaurant.rating}</p>
                             </article>
                             <div class="card-action">
-                            <a href="${restaurant.website}">${restaurant.name}
+                            <a href="${restaurant.website}">${restaurant.name}<a>
+                            <i class="material-icons right delete-icon">close</i>
                             </div>
                         </div>
                     </div>`
                 );
+        }
+
+        //Error
+        function handleError(e) {
+            console.log('error', e);
+            $('#restaurantTarget').text('Failed to load.');
+        }
+    })
+    // DELETE CARD
+
+    $('delete-icon').on('click', function(e) {
+        e.preventDefault();
+        
+
+        // CREATE NEW RECOMMENDATION 
+        $.ajax({
+            method: 'DELETE',
+            url: rootUrl + 'restaurant',
+            data: recommend,
+            success: handleSuccess,
+            error: handleError
+        });
+
+        //Success
+        function handleSuccess(json) {
+            var restaurants = json
+            
+                console.log(restaurant.image);
+                // return a string built using a template literal, need to add properties:
+                db.Restaurant.delete({}, function(err, restaurants){
+                    if(err) {
+                      console.log('Error occurred in remove', err);
+                    } else {
+                      console.log('removed restaurants');
+                  
+                    }
+                  });
         }
 
         //Error
