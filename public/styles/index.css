@@ -1,11 +1,22 @@
 
 body {
-    background-color: skyblue;
+    /* background-color: skyblue; */
+}
+
+.nav-wrapper {
+    background-color: #BC0402;
+}
+
+ul a {
+    font-family: 'PT Serif', serif;
+}
+
+.brand-logo {
+    margin-left: 2%;
 }
 
 h3 {
-    font-style: oblique;
-    color: green;
+    font-family: "Montserrat", sans-serif;
 }
 
 .front {
