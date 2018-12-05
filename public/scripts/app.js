@@ -4,7 +4,7 @@ var allrestaurant = [];
 var rootUrl = "http://localhost:3000/"
 $(document).ready(function () {
 
-    // Get all 
+    // --------------------------------------------------------------------------------Get all 
     $.ajax({
         method: 'GET',
         url: rootUrl + 'restaurant',
@@ -33,8 +33,8 @@ $(document).ready(function () {
                         <div class="card-action">
                         
                         <a href="${restaurant.website}">${restaurant.name}</a>
-                        <i class="material-icons right delete-icon">close</i>
                         
+                        <i class="material-icons right delete-icon">close</i>
                         
                         </div>
                     </div>
@@ -63,7 +63,7 @@ $(document).ready(function () {
             website: $('#website').val()
         };
 
-        // CREATE NEW RECOMMENDATION 
+        // ------------------------------------------------------------------CREATE NEW RECOMMENDATION 
         $.ajax({
             method: 'POST',
             url: rootUrl + 'restaurant',
@@ -90,7 +90,7 @@ $(document).ready(function () {
                                 <p>Rating: ${restaurant.rating}</p>
                             </article>
                             <div class="card-action">
-                            <a href="${restaurant.website}">${restaurant.name}<a>
+                            <a href="${restaurant.website}">${restaurant.name}</a>
                             <i class="material-icons right delete-icon">close</i>
                             </div>
                         </div>
@@ -104,41 +104,36 @@ $(document).ready(function () {
             $('#restaurantTarget').text('Failed to load.');
         }
     })
-    // DELETE CARD
 
-    $('delete-icon').on('click', function(e) {
-        e.preventDefault();
-        
+        // ------------------------------------------------------------------DELETE----------------------------------------------------------------//
 
-        // CREATE NEW RECOMMENDATION 
-        $.ajax({
-            method: 'DELETE',
-            url: rootUrl + 'restaurant',
-            data: recommend,
-            success: handleSuccess,
-            error: handleError
+
+        $('.delete-icon').on('click', function (){
+            console.log('clicked delete');
+            // when user clicks delete, grab the id
+            var id = $(this).data("id")
+     
+            $.ajax({
+                method:'DELETE',
+                url:`/restaurant/${id}`,
+                success: deleteSuccess,
+                error:handleError
+            });
         });
+            function deleteSuccess (json) {
+                window.location.reload();
+            };
 
-        //Success
-        function handleSuccess(json) {
-            var restaurants = json
-            
-                console.log(restaurant.image);
-                // return a string built using a template literal, need to add properties:
-                db.Restaurant.delete({}, function(err, restaurants){
-                    if(err) {
-                      console.log('Error occurred in remove', err);
-                    } else {
-                      console.log('removed restaurants');
-                  
-                    }
-                  });
-        }
 
-        //Error
-        function handleError(e) {
-            console.log('error', e);
-            $('#restaurantTarget').text('Failed to load.');
-        }
-    })
+
+
+
+
+
+
+
+
+
+
+
 });
