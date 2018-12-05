@@ -2,6 +2,9 @@
     width: 0px;
 }
 
+body {
+    width: 100%;
+}
 h1,
 h2,
 h3,
@@ -31,7 +34,7 @@ ul a {
 }
 
 .brand-logo {
-    margin-left: 8.75%;
+    margin-left: 2.5%;
 }
 
 .profile-pic {
@@ -41,28 +44,43 @@ ul a {
     border: 2px solid #D4CAB1;
 }
 
+.valign-wrapper {
+    width: 90%;
+}
 
 .about-me {
-    background-color: rgba(212, 202, 177, 0.125);
+    background-color: rgba(119, 119, 119, 0.05);
     margin-top: -2em;
     height: 10em;
     /* border-bottom: 2px solid #FF6E69; */
 }
 
+.recent-content {
+    width: 100%;
+    padding-left: 1.5em;
+}
 
 .recent-eats {
     margin-top: 2em;
+    width: 100%;
+}
+
+.recent-header {
+    margin-bottom: -1.25em;
 }
 
 .recent-restaurants {
     margin-top: 5em;
 }
 
-
+.card-content {
+    margin-top: -1em;
+}
 
 p {
     font-size: 1rem;
     font-family: 'PT Serif', serif;
+    color: #777777;
 }
 
 .checked {
