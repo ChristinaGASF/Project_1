@@ -86,10 +86,8 @@ h3 {
     height: 50px;
 }
 
-/* .go-to-profile {
-    display: none;
-}
-
-.to-profile {
-    display: inline-block;
-} */
+@media all and (max-width: 400px) {
+     .buttons { 
+         flex-direction: column; 
+        } 
+    }

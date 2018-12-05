@@ -20,6 +20,8 @@ Abstract
 
 Once signed in the user can navigate to the profile page and other contents.
 
+Authors have tried strictly to stay within the manifest that school provided that includes responsiveness of all the pages.
+
 ### Technologies Requirements:
 * Express API - both HTML and JSON endpoints
 * Integrating Google Sign-In into web app (Federated login concept)
