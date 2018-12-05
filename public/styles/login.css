@@ -3,7 +3,6 @@ body {
     background-size: cover;
     background-color: rgba(0,0,0,0.75);
     background-repeat: no-repeat;
-    color: white;
 }
 .container {
     padding-top: 15%;
@@ -13,18 +12,11 @@ body {
     background-color: rgba(0,0,0,0.5);
 }
 
-header {
-    height: 150px;
-    margin: 10px 0;
-}
-
 .foods-to-do {
     height: 50px;
     margin-bottom: 100px;
-}
-
-h3 {
     font-family: caslon;
+    color: lemonchiffon;
 }
 
 .main {
