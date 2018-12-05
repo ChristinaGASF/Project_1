@@ -27,6 +27,14 @@
                     <li><a href="recommendations">Recommendations</a></li>
                     <li><a href="profile"><i class="material-icons">account_circle</i></a></li>
                 </ul>
+                <form class=" hide-on-med-and-down" id="form1" >
+                        <div class="input-field" style="margin-left: 45%; max-width: 400pt;">
+                          <input id="search" type="search" required onkeyup="getRestaurants(this.value,0);">
+                          <label class="label-icon" for="search"><i class="material-icons right">search</i></label>
+                          <i class="material-icons">close</i>
+                          <div id="searchResults" ></div>
+                        </div>
+                      </form>
             </div>
         </nav>
         <ul class="sidenav" id="mobile-demo">
@@ -49,29 +57,35 @@
     <section class="form-container">
         <form class="col s12 l4 push-l3">
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m4 offset-m4">
                     <input placeholder="Restaurant Name" id="name" type="text" class="validate">
 
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s12 m4 offset-m4">
                     <input placeholder="Type" id="type" type="text" class="validate">
 
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m4 offset-m4">
                     <input placeholder="Rating" id="rating" type="text" class="validate">
 
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m4 offset-m4">
                     <input placeholder="Image" id="image" type="text" class="validate">
 
                 </div>
             </div>
             <div class="row">
-                <div class="submit-form col s12">
+                <div class="input-field col s12 m4 offset-m4">
+                    <input placeholder="Website" id="website" type="text" class="validate">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="submit-form col s12 m4 offset-m4">
                     <input type="submit" id="submit" type="submit" value="Submit Recommendation" class="right">
                 </div>
             </div>
