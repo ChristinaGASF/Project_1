@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
   });
 
+  app.get('/profile', (req, res) => {
+    res.sendFile(__dirname + '/views/profile.html');
+  });
+
 // JSON ENDPOINTS
 // Document all your endpoints below as a simple hardcoded JSON object.
 // need to double check paths as file structure get updated

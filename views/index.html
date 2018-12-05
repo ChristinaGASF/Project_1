@@ -10,11 +10,8 @@
     <title>Project_1</title>
     <!--Google Platform Library -->
     <!--You must include the Google Platform Library on your web pages that integrate Google Sign-In.-->
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" media="screen" href="../public/styles/index.css" />
-=======
-    <link rel="stylesheet" type="text/css" media="screen" href="/public/styles/index.css" />
->>>>>>> 0541f0eee9535c6813cc2ff6ced0f3224f75f59b
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/index.css" />
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
@@ -26,10 +23,11 @@
 </head>
 <body>
     <div class="container">
-    <h3>Welcome to Yelp Me</h3>
+    <h3>Welcome to Food To-Do</h3>
 
     <!--Google Sign-In button that uses the default settings,-->
     <div class="g-signin2" data-onsuccess="onSignIn">Sign in</div>
+    <button class="go-to-profile"><a href="profile">To profile</a></button>
 
     <!-- Display Google sign-in button -->
     <div id="gSignIn"></div>
@@ -46,9 +44,8 @@
       <p>
         This is a website that will give you an idea which restaurant to go for the best menu in the city of San Francisco.
       </p>
-
       <p>
-        <strong>Instruction</strong>: Once you click the sign in button it will navigate you to the Google sign in window. You can sign in to this website using Google OAuth2 sign in method. You do not require to enter any of your credentials here to sign in. 
+        <strong>Instruction</strong>: Once you click the sign in button it will navigate you to the Google sign in window. You can sign in to this website using Google OAuth2 sign in method. You do not require to enter any of your credentials here to sign in. After signing in please click 'To prfile' button.
       </p>
     </div>
 
@@ -60,7 +57,8 @@
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-      }
+        
+     }
 
       function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
@@ -68,6 +66,7 @@
           console.log('User signed out.');
         });
       }
-    </script>  
+    </script> 
+    <script src="../public/scripts/index.js"></script> 
 </body>
 </html>
