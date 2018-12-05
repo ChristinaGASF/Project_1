@@ -4,8 +4,22 @@
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+ {
     font-family: "Montserrat", sans-serif;
+}
+
+h4 {
+    margin-top: 2em;
+}
+
+h5 {
+    font-weight:900;
+}
+
+.name {
+    margin-top: 3.5%;
 }
 
 ul a {
@@ -17,18 +31,22 @@ ul a {
 }
 
 .brand-logo {
-    margin-left: 2%;
+    margin-left: 8.75%;
 }
 
 .profile-pic {
-    height: 100px;
-    width: 150px;
-    border: 5px solid #D4CAB1;
+    margin-top: 20%;
+    height: 75px;
+    width: 100px;
+    border: 2px solid #D4CAB1;
 }
 
 
 .about-me {
-    border-bottom: 2px solid #FF6E69;
+    background-color: rgba(212, 202, 177, 0.125);
+    margin-top: -2em;
+    height: 10em;
+    /* border-bottom: 2px solid #FF6E69; */
 }
 
 
@@ -40,16 +58,10 @@ ul a {
     margin-top: 5em;
 }
 
-h4 {
-    margin-top: 2em;
-}
 
-h5 {
-    font-weight: bolder;
-}
 
 p {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family: 'PT Serif', serif;
 }
 
@@ -59,4 +71,10 @@ p {
 
 .row {
     margin-top: 2em;
+}
+.restaurant-card {
+    transition: all .2s ease-in-out;
+}
+.restaurant-card:hover {
+    transform: scale(1.02)
 }
