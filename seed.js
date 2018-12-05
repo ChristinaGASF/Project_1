@@ -45,11 +45,11 @@ db.Restaurant.deleteMany({}, function(err, restaurants){
     }
   });
 
-db.Restaurant.create(restaurant_list, (err, newRestaurant) => {
-    if (err) {
-      console.log(err)
-    }
-    console.log(`created ${newRestaurant}`)
-  })
+// db.Restaurant.create(restaurant_list, (err, newRestaurant) => {
+//     if (err) {
+//       console.log(err)
+//     }
+//     console.log(`created ${newRestaurant}`)
+//   })
 
  

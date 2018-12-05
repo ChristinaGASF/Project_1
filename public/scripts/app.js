@@ -23,7 +23,7 @@ $(document).ready(function () {
                 <div class="col s12 m3 l2 push-l1">
                     <div class="card">
                         <div class="card-image">
-                            <img src=/images/${restaurant.image}>
+                            <img src=${restaurant.image}>
                             <span class="card-title" style="height:60%; width: 100%;">${restaurant.name}</span>
                         </div>
                         <article class="card-content">
@@ -31,7 +31,11 @@ $(document).ready(function () {
                             <p>Rating: ${restaurant.rating}</p>
                         </article>
                         <div class="card-action">
+                        
                         <a href="${restaurant.website}">${restaurant.name}
+                        
+                        <i class="material-icons right">close</i>
+                        
                         </div>
                     </div>
                 </div>`
@@ -59,10 +63,6 @@ $(document).ready(function () {
             website: $('#website').val()
         };
 
-        // data = JSON.stringify(recommend);
-        
-        console.log(recommend)
-
         // CREATE NEW RECOMMENDATION 
         $.ajax({
             method: 'POST',
@@ -75,9 +75,8 @@ $(document).ready(function () {
         //Success
         function handleSuccess(json) {
             var restaurant = json
-            console.log(restaurant);
             
-                // console.log(restaurant.image);
+                console.log(restaurant.image);
                 // return a string built using a template literal, need to add properties:
                 $('#restaurant').append(`
                     <div class="col s12 m3 l2 push-l1">
