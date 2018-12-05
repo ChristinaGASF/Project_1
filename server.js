@@ -10,11 +10,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-// bodyParser = require('body-parser'),
+bodyParser = require('body-parser')
 const db = require('./models');
 // ctrl = require('./controllers');
 
-// app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.json());
 
 // ROUTES

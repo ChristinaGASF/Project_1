@@ -14,6 +14,15 @@ ul a {
     margin-left: 2%;
 }
 
+h3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+.card-image img {
+    height: 150px;
+}
+
 ::placeholder {
     color: #BC0402;
 }
@@ -33,8 +42,17 @@ ul a {
 
 .card-title {
     background-color: rgba(0,0,0,0.5);
+    text-decoration: none;
 }
 
 .card-action a {
     color: #ECBB5C
+}
+
+.delete-icon {
+    color: #BC0402;
+}
+
+.delete-icon:hover {
+    cursor: pointer;
 }

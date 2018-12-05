@@ -13,7 +13,7 @@ var restaurant_list = [
 //     id: "input data here - expects Number",
 // },
 {
-    name: "Boudin Bakery Cafe",
+    name: "Boudin Bakery",
     type: "Bakery",
     rating: "3.9",
     image: "boudin.jpeg",
@@ -45,11 +45,11 @@ db.Restaurant.deleteMany({}, function(err, restaurants){
     }
   });
 
-db.Restaurant.create(restaurant_list, (err, newRestaurant) => {
-    if (err) {
-      console.log(err)
-    }
-    console.log(`created ${newRestaurant}`)
-  })
+// db.Restaurant.create(restaurant_list, (err, newRestaurant) => {
+//     if (err) {
+//       console.log(err)
+//     }
+//     console.log(`created ${newRestaurant}`)
+//   })
 
  
