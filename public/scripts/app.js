@@ -20,7 +20,7 @@ $(document).ready(function () {
             // console.log(restaurant.image);
             // return a string built using a template literal, need to add properties:
             $('#restaurant').append(`
-                <div class="col s12 m3 l2 push-l1">
+                <div class="col s12 m3 l2 push-m1 push-l1">
                     <div class="card">
                         <div class="card-image">
                             <img src=${restaurant.image}>
@@ -34,7 +34,7 @@ $(document).ready(function () {
                         
                         <a href="${restaurant.website}">${restaurant.name}</a>
                         
-                        <i class="material-icons right delete-icon">close</i>
+                        <i id="${restaurant._id}" class="material-icons right delete-icon">close</i>
                         
                         </div>
                     </div>
@@ -91,7 +91,7 @@ $(document).ready(function () {
                             </article>
                             <div class="card-action">
                             <a href="${restaurant.website}">${restaurant.name}</a>
-                            <i class="material-icons right delete-icon">close</i>
+                            <i id="${restaurant._id}" class="material-icons right delete-icon">close</i>
                             </div>
                         </div>
                     </div>`
@@ -108,20 +108,21 @@ $(document).ready(function () {
         // ------------------------------------------------------------------DELETE----------------------------------------------------------------//
 
 
-        $('.delete-icon').on('click', function (){
-            console.log('clicked delete');
+        $('#restaurant').on('click','.delete-icon', function (){
+            
             // when user clicks delete, grab the id
-            var id = $(this).data("id")
-     
+            var id = $(this).attr('id');
+            console.log(id);
             $.ajax({
                 method:'DELETE',
-                url:`/restaurant/${id}`,
+                url:`${rootUrl}restaurant/${id}`,
                 success: deleteSuccess,
                 error:handleError
             });
         });
             function deleteSuccess (json) {
                 window.location.reload();
+                console.log(json);
             };
 
 

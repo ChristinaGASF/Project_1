@@ -52,3 +52,7 @@ h3 {
 .delete-icon {
     color: #BC0402;
 }
+
+.delete-icon:hover {
+    cursor: pointer;
+}
