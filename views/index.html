@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,23 +11,21 @@
     <title>Project_1</title>
     <!--Google Platform Library -->
     <!--You must include the Google Platform Library on your web pages that integrate Google Sign-In.-->
-
-<<<<<<< HEAD
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="/styles/login.css" />
-=======
-    <link rel="stylesheet" type="text/css" media="screen" href="./styles/index.css" />
->>>>>>> 1e18b1de20bdebb01bf36d2dca6b24c24b9c4dfd
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <!--Load the Google Platform Library-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
 </head>
+
 <body>
-<<<<<<< HEAD
     <section class="nav-container">
         <nav>
             <div class="nav-wrapper">
@@ -46,62 +45,60 @@
             <li><a href="mobile.html">Mobile</a></li>
         </ul>
     </section>
-    <div class="container col s8">
-    <h3 class="center-align">Welcome to Foods-To-Do</h3>
-=======
     <div class="container">
-<<<<<<< HEAD
-    <h3>Welcome to Food To-Do</h3>
-
-    <div class="main">
-=======
-    <h3>Welcome to Foods-To-Do</h3>
->>>>>>> 1e18b1de20bdebb01bf36d2dca6b24c24b9c4dfd
->>>>>>> 169d1c4186e3318a9b6ca8678848069cccd6c31c
-
-    <!--Google Sign-In button that uses the default settings,-->
-    <div class="g-signin2 s8 center-align" data-onsuccess="onSignIn">Sign in</div>
-    <button class="go-to-profile"><a href="recommendations">To Recommendations</a></button>
-
-    <!-- Display Google sign-in button -->
-    <div id="gSignIn"></div>
-
-    <!-- Show the user profile details -->
-    <!-- <div class="userContent" style="display: none;"></div> -->
-    <div class="userContent"></div>
+        <h3>Welcome to Foods-To-Do</h3>
 
 
-    <!--Sign out a user-->
-    <button class="signout-button"><a href="#" onclick="signOut();">Sign out</a></button>
+        <!--Google Sign-In button that uses the default settings,-->
+        <div class="g-signin2 s8 center-align" data-onsuccess="onSignIn">Sign in</div>
+        <button class="go-to-profile"><a href="recommendations">To Recommendations</a></button>
 
-    <div class="intro">
-      <p>
-        This is a website that will give you an idea which restaurant to go for the best menu in the city of San Francisco.
-      </p>
-      <p>
-        <strong>Instruction</strong>: Once you click the sign in button it will navigate you to the Google sign in window. You can sign in to this website using Google OAuth2 sign in method. You do not require to enter any of your credentials here to sign in. After signing in please click 'To prfile' button.
-      </p>
-    </div>
+        <!-- Display Google sign-in button -->
+        <div id="gSignIn"></div>
+
+        <!-- Show the user profile details -->
+        <!-- <div class="userContent" style="display: none;"></div> -->
+        <div class="userContent"></div>
+
+
+        <!--Sign out a user-->
+        <button class="signout-button"><a href="#" onclick="signOut();">Sign out</a></button>
+
+        <div class="intro">
+            <p>
+                This is a website that will give you an idea which restaurant to go for the best menu in the city of
+                San Francisco.
+            </p>
+            <p>
+                <strong>Instruction</strong>: Once you click the sign in button it will navigate you to the Google sign
+                in window. You can sign in to this website using Google OAuth2 sign in method. You do not require to
+                enter any of your credentials here to sign in. After signing in please click 'To prfile' button.
+            </p>
+        </div>
     </div>
 
     </div>
     <script>
-      function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        
-     }
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            
 
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log('User signed out.');
-        });
-      }
-    </script> 
-    <script src="../public/scripts/index.js"></script> 
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+    <script src="../public/scripts/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
+
 </html>
