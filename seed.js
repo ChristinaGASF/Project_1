@@ -13,7 +13,7 @@ var restaurant_list = [
 //     id: "input data here - expects Number",
 // },
 {
-    name: "Boudin Bakery Cafe",
+    name: "Boudin Bakery",
     type: "Bakery",
     rating: "3.9",
     image: "boudin.jpeg",

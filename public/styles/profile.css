@@ -41,7 +41,7 @@ ul a {
     margin-top: 20%;
     height: 75px;
     width: 100px;
-    border: 2px solid #D4CAB1;
+    /* border: 2px solid #D4CAB1; */
 }
 
 .valign-wrapper {
@@ -71,6 +71,9 @@ ul a {
 
 .recent-restaurants {
     margin-top: 5em;
+}
+.card-image img {
+    height: 300px;
 }
 
 .card-content {
