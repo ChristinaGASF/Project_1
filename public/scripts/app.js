@@ -55,9 +55,13 @@ $(document).ready(function () {
             name: $('#restaurant-name').val(),
             type:$('#type').val(),
             rating: $('#rating').val(),
-            img: $('#image').val(),
+            image: $('#image').val(),
             website: $('#website').val()
         };
+
+        // data = JSON.stringify(recommend);
+        
+        console.log(recommend)
 
         // CREATE NEW RECOMMENDATION 
         $.ajax({
@@ -70,30 +74,28 @@ $(document).ready(function () {
 
         //Success
         function handleSuccess(json) {
-            var restaurants = json
-            console.log(recommend);
+            var restaurant = json
+            console.log(restaurant);
             
-            restaurants.forEach(recommend => {
                 // console.log(restaurant.image);
                 // return a string built using a template literal, need to add properties:
                 $('#restaurant').append(`
                     <div class="col s12 m3 l2 push-l1">
                         <div class="card">
                             <div class="card-image">
-                                <img src=${img}>
-                                <span class="card-title" style="height:60%; width: 100%;">${restaurant-name}</span>
+                                <img src=${restaurant.image}>
+                                <span class="card-title" style="height:60%; width: 100%;">${restaurant.name}</span>
                             </div>
                             <article class="card-content">
-                                <h6>${type}</h6>
-                                <p>Rating: ${rating}</p>
+                                <h6>${restaurant.type}</h6>
+                                <p>Rating: ${restaurant.rating}</p>
                             </article>
                             <div class="card-action">
-                            <a href="${website}">${restaurant-name}
+                            <a href="${restaurant.website}">${restaurant.name}
                             </div>
                         </div>
                     </div>`
                 );
-            });
         }
 
         //Error
