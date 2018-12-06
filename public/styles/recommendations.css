@@ -75,6 +75,10 @@ p i {
     border: 2px solid #BC0402;
 }
 
+.card-section {
+    margin-left:10%;
+}
+
 .row {
     margin-top: 2em;
 }
@@ -96,6 +100,10 @@ p i {
     cursor: pointer;
 }
 
+.unchecked {
+    color: lightgray;
+}
+
 .checked {
     color: #ECBB5C;
 }
@@ -106,6 +114,16 @@ p i {
     .star-container {
         width: 100%;
     }    
+}
+
+
+@media only screen and (max-width: 992px) {
+    .card-section {
+        margin-right: 25%;
+        margin-left: 15%;
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 @media only screen and (max-width: 600px) {

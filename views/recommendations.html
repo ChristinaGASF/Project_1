@@ -23,18 +23,18 @@
                 <a href="/" class="brand-logo left">Foods-To-Do</a>
                 <a href="" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="recommendations">My To-Dos</a></li>
+                    <!-- <li><a href="/">Home</a></li>
+                    <li><a href="recommendations">My To-Dos</a></li> -->
                     <li><a href="profile"><i class="material-icons">account_circle</i></a></li>
                 </ul>
-                <form class=" hide-on-med-and-down" id="form1" >
+                <!-- <form class=" hide-on-med-and-down" id="form1" >
                         <div class="input-field" style="margin-left: 45%; max-width: 400pt;">
                           <input id="search" type="search" required onkeyup="getRestaurants(this.value,0);">
                           <label class="label-icon" for="search"><i class="material-icons right">search</i></label>
                           <i class="material-icons">close</i>
                           <div id="searchResults" ></div>
                         </div>
-                      </form>
+                      </form> -->
             </div>
         </nav>
         <ul class="sidenav" id="mobile-demo">
@@ -49,15 +49,15 @@
     <header class="row">
     <h4 class="center-align">Your Food-To-Do</h4>
     </header>
-    <section class="col s4 m3 l3" >
-        <div class="row" style="width:100%;" id="restaurant">
+    <section class="card-section col s4 m3 l3" >
+        <div class="row" style="width:100%;"  id="restaurant">
 
         </div>
     </section>
     <!------------------------------------------FORM------------------------------------------------------------------------->
     <section class="form-container">
     <h4 class="center-align">Create Food-To-Do</h4>
-        <form class="col s12 m10l4 push-l4">
+        <form class="col s12 m2 l4 push-l4">
             <div class="row col s12" style="width:100%;">
                 <div class="input-field col s12 m8 offset-m2">
                     <input placeholder="Restaurant Name" id="restaurant-name" type="text" class="validate" required>
@@ -70,7 +70,7 @@
             </div>
             <div class="row col s12" style="width:100%;">
                 <div class="input-field col s12 m8 offset-m2">
-                    <input placeholder="Rating" id="rating" type="text" class="validate" required>
+                    <input placeholder="Rating" id="rating" type="number" min="1" max="5" class="validate" required>
 
                 </div>
             </div>
