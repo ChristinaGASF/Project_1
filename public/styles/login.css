@@ -16,16 +16,16 @@ body {
     height: 50px;
     margin-bottom: 100px;
     font-family: caslon;
-    color: lemonchiffon;
+    color: white;
 }
 
 .main {
     width: 600px;
     height: 320px;
-    background-color: ivory;
+    /* background-color: ivory; */
     margin: 10px;
     padding: 5px;
-    border: 2px green solid;
+    /* border: 2px green solid; */
     border-radius: 5px;
 }
 .buttons {
@@ -37,8 +37,8 @@ body {
     height: 50px;
     margin: 10px;
     padding: 5px;
-    border: 2px yellow solid;
-    background-color: grey;
+    /* border: 2px yellow solid;
+    background-color: grey; */
     border-radius: 3px;
 }
 
@@ -47,7 +47,7 @@ body {
     height: 50px;
     margin: 10px;
     padding: 5px;
-    border: 5px green solid;
+    /* border: 5px green solid; */
     background-color: white;
     border-radius: 3px;
     display: none;
@@ -58,7 +58,7 @@ body {
     height: 50px;
     margin: 10px;
     padding: 5px;
-    border: 5px red solid;
+    /* border: 5px red solid; */
     background-color: white;
     border-radius: 3px;
     display: none;
@@ -70,7 +70,7 @@ body {
     width: auto;
     text-align: justify;
     font-size: 1.2em;
-    color: yellow;
+    /* color: yellow; */
 }
 
 .go-to-profile {
