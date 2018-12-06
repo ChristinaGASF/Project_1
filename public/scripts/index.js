@@ -1,9 +1,16 @@
-let color = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
-for (let i=6; i>=0; i--) {
-    $("header").append(
-        `<div class="ball" style="background-color:${color[i]}"><h3>${i}</h3><div>`
+function makeBalls(){
+    console.log('balls')
+    let color = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+    for (let i=6; i>=0; i--) {
+    $(".top").append(
+        `<div class="ball" style="background-color:${color[i]}"><h3 id="number">${i+1}</h3><div>`
     )
 }
+}
+
+// makeBalls();
+
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
@@ -13,7 +20,7 @@ function onSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     $('.profile-button').css('display', 'inline-block');
     $('.signout-button').css('display', 'inline-block');
-    $(".ball").css("display", "inline-block");
+    makeBalls();
 }
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();

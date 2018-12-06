@@ -4,20 +4,22 @@ body {
     background-color: rgba(0,0,0,0.75);
     background-repeat: no-repeat;
 }
-/*header with balls starts here*/
-header {
+
+.top {
     display: flex;
     justify-content: space-evenly;
     flex-flow: wrap row-reverse;
 }
 
 .ball {
-    margin: 20px;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     margin-top: 10px;
-    display: none;
+}
+
+#number {
+    text-align: center;
 }
 
 @media all and (max-width: 399px) {
@@ -38,10 +40,10 @@ header {
     height: 50px;
     margin-bottom: 100px;
     font-family: caslon;
-    color: lemonchiffon;
+    color: lightcyan;
 }
 
-.main {
+/* .main {
     width: 600px;
     height: 320px;
     background-color: ivory;
@@ -49,7 +51,7 @@ header {
     padding: 5px;
     border: 2px green solid;
     border-radius: 5px;
-}
+} */
 .buttons {
     display: flex;
 }
