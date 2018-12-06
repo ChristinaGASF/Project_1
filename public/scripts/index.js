@@ -5,12 +5,15 @@ function makeBalls(){
     for (let i=6; i>=0; i--) {
     $(".top").append(
         `<div class="ball" style="background-color:${color[i]}"><h3 id="number">${i+1}</h3><div>`
-    )
-}
+        )
+    }
 }
 
-// makeBalls();
+function resetWindow() {
+    location.reload();
+}
 
+$(".signout-button").click(resetWindow);
 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();

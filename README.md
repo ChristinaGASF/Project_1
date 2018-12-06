@@ -22,6 +22,8 @@ Once signed in the user can navigate to the profile page and other contents.
 
 Authors have tried strictly to stay within the manifest that school provided that includes responsiveness of all the pages.
 
+Instructors Isha Arora and Dalton Hart both played role helping the authors create this project,especially towards writing the code in modules and using git commands. 
+
 ### Technologies Requirements:
 * Express API - both HTML and JSON endpoints
 * Integrating Google Sign-In into web app (Federated login concept)
@@ -78,4 +80,19 @@ app.delete('/restaurant/:id', (req, res) => {
             });
         }
     </script>
+```
+
+* Animated stylsheet decoration using css and jQuery:
+
+```
+function makeBalls(){
+    console.log('balls')
+    let color = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+    for (let i=6; i>=0; i--) {
+    $(".top").append(
+        `<div class="ball" style="background-color:${color[i]}"><h3 id="number">${i+1}</h3><div>`
+        )
+    }
+}
 ```
