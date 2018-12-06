@@ -4,7 +4,7 @@ var allrestaurant = [];
 var rootUrl = "http://localhost:3000/"
 $(document).ready(function () {
 
-    // --------------------------------------------------------------------------------Get all 
+// GET ALL 
     $.ajax({
         method: 'GET',
         url: rootUrl + 'restaurant',
@@ -12,7 +12,7 @@ $(document).ready(function () {
         error: handleError
     });
 
-    //Success
+    // SUCCESS
     function handleSuccess(json) {
         var restaurants = json
 
@@ -36,7 +36,7 @@ $(document).ready(function () {
         });
     }
 
-    //Error
+    // ERROR
     function handleError(e) {
         console.log('error', e);
         $('#restaurantTarget').text('Failed to load.');
@@ -56,7 +56,7 @@ $(document).ready(function () {
             website: $('#website').val()
         };
 
-        // ------------------------------------------------------------------CREATE NEW RECOMMENDATION 
+        // CREATE NEW RECOMMENDATION 
         $.ajax({
             method: 'POST',
             url: rootUrl + 'restaurant',
@@ -65,12 +65,12 @@ $(document).ready(function () {
             error: handleError
         });
 
-        //Success
+        // SUCCESS
         function handleSuccess(json) {
             var restaurant = json
 
             console.log(restaurant.image);
-            // return a string built using a template literal, need to add properties:
+            // return a string built using a template literal
             $('#restaurant').append(`
                 <div class="col s12 m3 l2 push-m1 push-l1 left">
                     <div class="card">
@@ -89,14 +89,14 @@ $(document).ready(function () {
                 </div>`);
         }
 
-        //Error
+        // ERROR
         function handleError(e) {
             console.log('error', e);
             $('#restaurantTarget').text('Failed to load.');
         }
     })
 
-    // ------------------------------------------------------------------DELETE----------------------------------------------------------------//
+    // DELETE
 
 
     $('#restaurant').on('click', '.delete-icon', function () {
@@ -117,16 +117,31 @@ $(document).ready(function () {
         console.log(json);
     };
 
-    //-------------------------------------------UPDATE---------------------//
-
+    // UPDATE
+// .update assigned to STAR value?? figure out how to append to filled in Stars with CSS
+    $('#restaurant').on('click','.update', function (){
+        console.log($(this));
+        var id = $(this).rating ("id");
     
+    $(this).rating.append
 
+    var newRating = {
+        rating: $('#ratingUpdate').val()
+    }
+    console.log(updatedRating);
 
+    $.ajax({
+        method:'PUT',
+        url: `${rootUrl}restaurant/${id}`,
+        success: updatedRating,
+        error: handleError,
+    })
 
-
-
-
-
+    function updatedRatingSuccess (json) {
+        var restaurant = json;
+        console.log (restaurant);
+        window.location.reload();
+    };
 
 
 });
