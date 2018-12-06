@@ -17,8 +17,6 @@ $(document).ready(function () {
         var restaurants = json
 
         restaurants.forEach(restaurant => {
-            // console.log(restaurant.image);
-            // return a string built using a template literal, need to add properties:
             $('#restaurant').append(`
                 <div class="col s12 m3 l2 push-m1 push-l1">
                     <div class="card">
