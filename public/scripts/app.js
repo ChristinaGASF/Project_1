@@ -18,7 +18,7 @@ $(document).ready(function () {
 
         restaurants.forEach(restaurant => {
             $('#restaurant').append(`
-                <div class="col s12 m3 l2 push-m1 push-l1 left">
+                <div class="col s12 m4 l3 push-m1 push-l1 left">
                     <div class="card">
                         <div class="card-image">
                             <img src=${restaurant.image} class="responsive-image">
@@ -27,12 +27,29 @@ $(document).ready(function () {
                         <article class="card-content">
                             <h6>${restaurant.type}</h6>
                             <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                                <div class="star-container">
+                                    <span class="${restaurant._id} fa fa-star "></span>
+                                    <span class="${restaurant._id} fa fa-star "></span>
+                                    <span class="${restaurant._id} fa fa-star "></span>
+                                    <span class="${restaurant._id} fa fa-star "></span>
+                                    <span class="${restaurant._id} fa fa-star "></span>
+                                </div>
                         </article>
                         <div class="card-action" style="height:6em;">
                         <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
                         </div>
                     </div>
                 </div>`);
+                let stars = $(`.${restaurant._id}`)
+                let count = 0
+                stars.each( function(star){
+                    
+                    if (count >= restaurant.rating)
+                        return false;
+
+                    $(this).addClass('checked')
+                    count++
+                });
         });
     }
 
@@ -55,6 +72,11 @@ $(document).ready(function () {
             image: $('#image').val(),
             website: $('#website').val()
         };
+
+        if (recommend.rating > 5 || recommend.rating < 1) {
+            alert("Please rate on scale of 1-5");
+            return;
+        }
 
         // CREATE NEW RECOMMENDATION 
         $.ajax({
@@ -81,12 +103,20 @@ $(document).ready(function () {
                         <article class="card-content">
                             <h6>${restaurant.type}</h6>
                             <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                                    <span class="${restaurant._id} fa fa-star ">hello</span>
+                                    <span class="${restaurant._id} fa fa-star ">hello</span>
+                                    <span class="${restaurant._id} fa fa-star "></span>
+                                    <span class="${restaurant._id} fa fa-star "></span>
+                                    <span class="${restaurant._id} fa fa-star "></span>
                         </article>
                         <div class="card-action" style="height:6em;">
                         <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
                         </div>
                     </div>
                 </div>`);
+            let stars = $(`.${restaurant._id}`)
+            console.log(stars)
+
         }
 
         // ERROR
@@ -123,7 +153,24 @@ $(document).ready(function () {
         console.log($(this));
         var id = $(this).rating ("id");
     
-    $(this).rating.append
+    // $(this).rating.append
+
+    $('restaurant.rating').append(`
+            <div class="col s12 m3 l2 push-m1 push-l1 left">
+                <div class="card">
+                    <div class="card-image">
+                        <img src=${restaurant.image} class="responsive-image">
+                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
+                    </div>
+                    <article class="card-content">
+                            <h6>${restaurant.type}</h6>
+                            <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                    </article>
+                    <div class="card-action" style="height:6em;">
+                        <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
+                    </div>
+                </div>
+            </div>`);
 
     var newRating = {
         rating: $('#ratingUpdate').val()

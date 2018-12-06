@@ -28,6 +28,14 @@ h3 {
     visibility: hidden;
 }
 
+.filled {
+    color: #ECBB5C;
+}
+
+.unfilled {
+    color: transparent;
+}
+
 .rating:hover .hidden {
     visibility: visible;
     color: #BC0402;
@@ -88,8 +96,17 @@ p i {
     cursor: pointer;
 }
 
+.checked {
+    color: #ECBB5C;
+}
 
 /* MEDIA QUERIES */
+
+@media only screen and (max-width: 1152px) {
+    .star-container {
+        width: 100%;
+    }    
+}
 
 @media only screen and (max-width: 600px) {
     .card-image img {
