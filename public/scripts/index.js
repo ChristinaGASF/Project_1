@@ -1,3 +1,10 @@
+let color = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+for (let i=6; i>=0; i--) {
+    $("header").append(
+        `<div class="ball" style="background-color:${color[i]}"><h3>${i}</h3><div>`
+    )
+}
+
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -6,13 +13,13 @@ function onSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     $('.profile-button').css('display', 'inline-block');
     $('.signout-button').css('display', 'inline-block');
+    $(".ball").css("display", "inline-block");
 }
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
         console.log('User signed out.');
     $('.profile-button').css('display', 'none');
-    $('.signout-button').css('display', 'none');
-        
+    $('.signout-button').css('display', 'none');     
     });
 }

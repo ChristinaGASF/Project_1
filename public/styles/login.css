@@ -4,6 +4,28 @@ body {
     background-color: rgba(0,0,0,0.75);
     background-repeat: no-repeat;
 }
+/*header with balls starts here*/
+header {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: wrap row-reverse;
+}
+
+.ball {
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+    display: none;
+}
+
+@media all and (max-width: 399px) {
+    header {
+        align-items: center;  
+      }
+    }
+/*header with balls ends here*/
 .container {
     padding-top: 15%;
     display: flex;
@@ -30,6 +52,12 @@ body {
 }
 .buttons {
     display: flex;
+}
+
+.signin-button:hover, 
+.profile-button:hover, 
+.signout-button:hover {
+    background-color: yellow;
 }
 
 .g-signin2 {
