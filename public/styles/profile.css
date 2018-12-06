@@ -41,7 +41,7 @@ ul a {
 
 .profile-pic {
     margin-top: 20%;
-    height: 75px;
+    height: 100px;
     width: 100px;
     /* border: 2px solid #D4CAB1; */
 }
@@ -56,6 +56,7 @@ ul a {
     height: 10em;
     /* border-bottom: 2px solid #FF6E69; */
 }
+
 
 .recent-content {
     width: 100%;
@@ -81,6 +82,9 @@ ul a {
 .card-content {
     margin-top: -1em;
 }
+
+
+
 
 p {
     font-size: 1rem;
