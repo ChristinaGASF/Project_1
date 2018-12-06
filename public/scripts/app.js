@@ -145,6 +145,11 @@ $(document).ready(function () {
         console.log (restaurant);
         window.location.reload();
     };
-
+        // ERROR
+        function handleError(e) {
+            console.log('error', e);
+            $('#restaurantTarget').text('Failed to load.');
+        }
+    })
 
 });
