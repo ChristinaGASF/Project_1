@@ -25,8 +25,9 @@ $(document).ready(function () {
                             <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
                         <article class="card-content">
-                            <h6>${restaurant.type}</h6>
-                            <p class="rating"><i id="update" class="hidden material-icons right">create</i></p>
+                            <section class="card-head">
+                                <h6>${restaurant.type}</h6>
+                            </section>
                                 <div class="star-container">
                                     <span class="${restaurant._id} fa fa-star unchecked"></span>
                                     <span class="${restaurant._id} fa fa-star unchecked"></span>
@@ -101,13 +102,16 @@ $(document).ready(function () {
                             <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
                         <article class="card-content">
-                            <h6>${restaurant.type}</h6>
-                            <p class="rating"><i id="update" class="hidden material-icons right">create</i></p>
+                            <section class="card-head">
+                                <h6>${restaurant.type}</h6>
+                            </section>
+                                <div class="star-container">
                                     <span class="${restaurant._id} fa fa-star "></span>
                                     <span class="${restaurant._id} fa fa-star "></span>
                                     <span class="${restaurant._id} fa fa-star "></span>
                                     <span class="${restaurant._id} fa fa-star "></span>
                                     <span class="${restaurant._id} fa fa-star "></span>
+                                </div>            
                         </article>
                         <div class="card-action" style="height:6em;">
                         <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        

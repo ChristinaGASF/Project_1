@@ -21,7 +21,7 @@ h3 {
 }
 
 .card-image img {
-    height: 150px;
+    height: 300px;
 }
 
 .hidden {
@@ -34,11 +34,6 @@ h3 {
 
 .unfilled {
     color: transparent;
-}
-
-.rating:hover .hidden {
-    visibility: visible;
-    color: #BC0402;
 }
 
 p i {
@@ -113,7 +108,16 @@ p i {
 @media only screen and (max-width: 1152px) {
     .star-container {
         width: 100%;
-    }    
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .card-action {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+
 }
 
 
