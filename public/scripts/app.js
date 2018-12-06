@@ -18,11 +18,11 @@ $(document).ready(function () {
 
         restaurants.forEach(restaurant => {
             $('#restaurant').append(`
-                <div class="col s12 m3 l2 push-m1 push-l1">
+                <div class="col s12 m3 l2 push-m1 push-l1 left">
                     <div class="card">
                         <div class="card-image">
-                            <img src=${restaurant.image}>
-                            <span class="card-title" style="height:50%; width: 100%;"><h6>${restaurant.name}</h6></span>
+                            <img src=${restaurant.image} class="responsive-image">
+                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
                         <article class="card-content">
                             <h6>${restaurant.type}</h6>
@@ -72,24 +72,21 @@ $(document).ready(function () {
             console.log(restaurant.image);
             // return a string built using a template literal, need to add properties:
             $('#restaurant').append(`
-                    <div class="col s12 m3 push-m1 l2 push-l1">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src=${restaurant.image}>
-                                <span class="card-title" style="height:60%; width: 100%;">${restaurant.name}</span>
-                            </div>
-                            <article class="card-content">
-                                <h6>${restaurant.type}</h6>
-                                <p class="rating">Rating: ${restaurant.rating}
-                                <i id="update" class="hidden material-icons">create</i>
-                                </p>
-                            </article>
-                            <div class="card-action">
-                            <a href="${restaurant.website}">${restaurant.name}</a>
-                            <i id="${restaurant._id}" class="material-icons right delete-icon">close</i>
-                            </div>
+                <div class="col s12 m3 l2 push-m1 push-l1 left">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src=${restaurant.image} class="responsive-image">
+                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
-                    </div>`);
+                        <article class="card-content">
+                            <h6>${restaurant.type}</h6>
+                            <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                        </article>
+                        <div class="card-action" style="height:6em;">
+                        <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
+                        </div>
+                    </div>
+                </div>`);
         }
 
         //Error

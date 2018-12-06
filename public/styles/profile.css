@@ -39,10 +39,13 @@ ul a {
     margin-left: 2.5%;
 }
 
+
+
 .profile-pic {
-    margin-top: 20%;
+    margin: 7.5% -10% 0 15%;
     height: 100px;
     width: 100px;
+    border-radius: 50%;
     /* border: 2px solid #D4CAB1; */
 }
 
@@ -108,4 +111,12 @@ p {
 }
 .restaurant-card:hover {
     transform: scale(1.02)
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 600px) {
+    .profile-pic {
+        margin-left: -20%;
+    }
 }
