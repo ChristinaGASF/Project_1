@@ -41,6 +41,11 @@ p i {
 .form-container {
     background-color:  rgba(119, 119, 119, 0.05);
     padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.form-container h4 {
+    margin-bottom: 5%;
 }
 
 ::placeholder {
