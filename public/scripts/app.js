@@ -4,7 +4,7 @@ var allrestaurant = [];
 var rootUrl = "http://localhost:3000/"
 $(document).ready(function () {
 
-    // --------------------------------------------------------------------------------Get all 
+// GET ALL 
     $.ajax({
         method: 'GET',
         url: rootUrl + 'restaurant',
@@ -12,19 +12,17 @@ $(document).ready(function () {
         error: handleError
     });
 
-    //Success
+    // SUCCESS
     function handleSuccess(json) {
         var restaurants = json
 
         restaurants.forEach(restaurant => {
-            // console.log(restaurant.image);
-            // return a string built using a template literal, need to add properties:
             $('#restaurant').append(`
-                <div class="col s12 m3 l2 push-m1 push-l1">
+                <div class="col s12 m3 l2 push-m1 push-l1 left">
                     <div class="card">
                         <div class="card-image">
-                            <img src=${restaurant.image}>
-                            <span class="card-title" style="height:50%; width: 100%;"><h6>${restaurant.name}</h6></span>
+                            <img src=${restaurant.image} class="responsive-image">
+                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
                         <article class="card-content">
                             <h6>${restaurant.type}</h6>
@@ -38,7 +36,7 @@ $(document).ready(function () {
         });
     }
 
-    //Error
+    // ERROR
     function handleError(e) {
         console.log('error', e);
         $('#restaurantTarget').text('Failed to load.');
@@ -58,7 +56,7 @@ $(document).ready(function () {
             website: $('#website').val()
         };
 
-        // ------------------------------------------------------------------CREATE NEW RECOMMENDATION 
+        // CREATE NEW RECOMMENDATION 
         $.ajax({
             method: 'POST',
             url: rootUrl + 'restaurant',
@@ -67,41 +65,38 @@ $(document).ready(function () {
             error: handleError
         });
 
-        //Success
+        // SUCCESS
         function handleSuccess(json) {
             var restaurant = json
 
             console.log(restaurant.image);
-            // return a string built using a template literal, need to add properties:
+            // return a string built using a template literal
             $('#restaurant').append(`
-                    <div class="col s12 m3 push-m1 l2 push-l1">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src=${restaurant.image}>
-                                <span class="card-title" style="height:60%; width: 100%;">${restaurant.name}</span>
-                            </div>
-                            <article class="card-content">
-                                <h6>${restaurant.type}</h6>
-                                <p class="rating">Rating: ${restaurant.rating}
-                                <i id="update" class="hidden material-icons">create</i>
-                                </p>
-                            </article>
-                            <div class="card-action">
-                            <a href="${restaurant.website}">${restaurant.name}</a>
-                            <i id="${restaurant._id}" class="material-icons right delete-icon">close</i>
-                            </div>
+                <div class="col s12 m3 l2 push-m1 push-l1 left">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src=${restaurant.image} class="responsive-image">
+                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
-                    </div>`);
+                        <article class="card-content">
+                            <h6>${restaurant.type}</h6>
+                            <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                        </article>
+                        <div class="card-action" style="height:6em;">
+                        <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
+                        </div>
+                    </div>
+                </div>`);
         }
 
-        //Error
+        // ERROR
         function handleError(e) {
             console.log('error', e);
             $('#restaurantTarget').text('Failed to load.');
         }
     })
 
-    // ------------------------------------------------------------------DELETE----------------------------------------------------------------//
+    // DELETE
 
 
     $('#restaurant').on('click', '.delete-icon', function () {
@@ -122,16 +117,36 @@ $(document).ready(function () {
         console.log(json);
     };
 
-    //-------------------------------------------UPDATE---------------------//
-
+    // UPDATE
+// .update assigned to STAR value?? figure out how to append to filled in Stars with CSS
+    $('#restaurant').on('click','.update', function (){
+        console.log($(this));
+        var id = $(this).rating ("id");
     
+    $(this).rating.append
 
+    var newRating = {
+        rating: $('#ratingUpdate').val()
+    }
+    console.log(updatedRating);
 
+    $.ajax({
+        method:'PUT',
+        url: `${rootUrl}restaurant/${id}`,
+        success: updatedRating,
+        error: handleError,
+    })
 
-
-
-
-
-
+    function updatedRatingSuccess (json) {
+        var restaurant = json;
+        console.log (restaurant);
+        window.location.reload();
+    };
+        // ERROR
+        function handleError(e) {
+            console.log('error', e);
+            $('#restaurantTarget').text('Failed to load.');
+        }
+    })
 
 });
