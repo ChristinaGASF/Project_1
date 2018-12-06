@@ -96,6 +96,10 @@ p {
     color: #ECBB5C;
 }
 
+.unchecked {
+    color: transparent;
+}
+
 .row {
     margin-top: 2em;
 }
