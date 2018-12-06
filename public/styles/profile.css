@@ -41,7 +41,7 @@ ul a {
 
 .profile-pic {
     margin-top: 20%;
-    height: 75px;
+    height: 100px;
     width: 100px;
     /* border: 2px solid #D4CAB1; */
 }
@@ -55,19 +55,6 @@ ul a {
     margin-top: -2em;
     height: 10em;
     /* border-bottom: 2px solid #FF6E69; */
-}
-.hidden {
-    visibility: hidden;
-}
-
-.status:hover .hidden {
-    visibility: visible;
-    color: #BC0402;
-}
-
-p i {
-    size: 25%;
-    color: rgba(119, 119, 119, 0.05);
 }
 
 

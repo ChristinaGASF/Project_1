@@ -15,31 +15,26 @@ $(document).ready(function () {
     //Success
     function handleSuccess(json) {
         var restaurants = json
-        
+
         restaurants.forEach(restaurant => {
             // console.log(restaurant.image);
             // return a string built using a template literal, need to add properties:
             $('#restaurant').append(`
-                <div class="col s12 m3 l2 push-m1 push-l1">
+                <div class="col s12 m2 l2 push-m1 push-l1">
                     <div class="card">
                         <div class="card-image">
                             <img src=${restaurant.image}>
-                            <span class="card-title" style="height:60%; width: 100%;">${restaurant.name}</span>
+                            <span class="card-title" style="height:50%; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
                         <article class="card-content">
                             <h6>${restaurant.type}</h6>
-                            <p>Rating: ${restaurant.rating}</p>
+                            <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
                         </article>
-                        <div class="card-action">
-                        
-                        <a href="${restaurant.website}">${restaurant.name}</a>
-                        
-                        <i id="${restaurant._id}" class="material-icons right delete-icon">close</i>
-                        
+                        <div class="card-action" style="height:6em;">
+                        <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
                         </div>
                     </div>
-                </div>`
-            );
+                </div>`);
         });
     }
 
@@ -49,15 +44,15 @@ $(document).ready(function () {
         $('#restaurantTarget').text('Failed to load.');
     }
 
-// });
+    // });
 
     // ON CLICK
-    $('form').on('submit', function(e) {
+    $('form').on('submit', function (e) {
         e.preventDefault();
-        
+
         let recommend = {
             name: $('#restaurant-name').val(),
-            type:$('#type').val(),
+            type: $('#type').val(),
             rating: $('#rating').val(),
             image: $('#image').val(),
             website: $('#website').val()
@@ -75,11 +70,11 @@ $(document).ready(function () {
         //Success
         function handleSuccess(json) {
             var restaurant = json
-            
-                console.log(restaurant.image);
-                // return a string built using a template literal, need to add properties:
-                $('#restaurant').append(`
-                    <div class="col s12 m3 l2 push-l1">
+
+            console.log(restaurant.image);
+            // return a string built using a template literal, need to add properties:
+            $('#restaurant').append(`
+                    <div class="col s12 m3 push-m1 l2 push-l1">
                         <div class="card">
                             <div class="card-image">
                                 <img src=${restaurant.image}>
@@ -87,15 +82,16 @@ $(document).ready(function () {
                             </div>
                             <article class="card-content">
                                 <h6>${restaurant.type}</h6>
-                                <p>Rating: ${restaurant.rating}</p>
+                                <p class="rating">Rating: ${restaurant.rating}
+                                <i id="update" class="hidden material-icons">create</i>
+                                </p>
                             </article>
                             <div class="card-action">
                             <a href="${restaurant.website}">${restaurant.name}</a>
                             <i id="${restaurant._id}" class="material-icons right delete-icon">close</i>
                             </div>
                         </div>
-                    </div>`
-                );
+                    </div>`);
         }
 
         //Error
@@ -105,29 +101,30 @@ $(document).ready(function () {
         }
     })
 
-        // ------------------------------------------------------------------DELETE----------------------------------------------------------------//
+    // ------------------------------------------------------------------DELETE----------------------------------------------------------------//
 
 
-        $('#restaurant').on('click','.delete-icon', function (){
-            
-            // when user clicks delete, grab the id
-            var id = $(this).attr('id');
-            console.log(id);
-            $.ajax({
-                method:'DELETE',
-                url:`${rootUrl}restaurant/${id}`,
-                success: deleteSuccess,
-                error:handleError
-            });
+    $('#restaurant').on('click', '.delete-icon', function () {
+
+        // when user clicks delete, grab the id
+        var id = $(this).attr('id');
+        console.log(id);
+        $.ajax({
+            method: 'DELETE',
+            url: `${rootUrl}restaurant/${id}`,
+            success: deleteSuccess,
+            error: handleError
         });
-            function deleteSuccess (json) {
-                window.location.reload();
-                console.log(json);
-            };
+    });
 
+    function deleteSuccess(json) {
+        window.location.reload();
+        console.log(json);
+    };
 
+    //-------------------------------------------UPDATE---------------------//
 
-
+    
 
 
 
