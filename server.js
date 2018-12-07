@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.json());
 
 // ROUTES
-// serve static files from public folder
 app.use(express.static(__dirname + '/public'));
 
 
@@ -74,23 +73,17 @@ app.get('./user', (req, res) => {
 
 // GET ALL restaurant request
 app.get('/restaurant', (req, res) => {
-  //find all restaurants in db
   db.Restaurant.find({}, (err, allRestaurants) => {
-    //if err, send err
     if (err) {
       console.log(err)
     };
-    //else, respond with a json object of all the restaurants
-    // console.log(allRestaurant);
     res.json(allRestaurants);
   });
 });
 
 // GET a specific restaurant by ID
 app.get('/restaurant:id', (req, res) => {
-  //get id from url parameters
   let restaurantId = req.params.id;
-  //find restaurant in db by id
   db.Restaurant.findById(restaurantId, (err, foundRestaurant) => {
     if (err) {
       return console.log(err)
@@ -101,10 +94,8 @@ app.get('/restaurant:id', (req, res) => {
 
 // CREATE a new restaurant
 app.post('/restaurant', (req, res) => {
-  //grab what the user entered in the body
   console.log(req.body);
   let newRestaurant = req.body;
-  //take the req body and create a new restaurant in the db
   db.Restaurant.create(newRestaurant, (err, savedRestaurant) => {
     if (err) {
       return console.log(err)
@@ -115,20 +106,17 @@ app.post('/restaurant', (req, res) => {
 
 // UPDATE a restaurant
 app.put('/restaurant/:id', (req, res) => {
-  //get restaurant by id from url params
   let restaurantId = req.params.id;
-  //get updated body from req.body
   let updatedBody = req.body;
 
-  // find and update the restaurant's attributes
   db.Restaurant.findOneAndUpdate({
       _id: restaurantId
-    }, // search condition
-    updatedBody, // new content to update
+    },
+    updatedBody,
     {
       new: true
-    }, // we want to receive the new object
-    (err, updatedRestaurant) => { //callback
+    }, 
+    (err, updatedRestaurant) => {
       if (err) {
         return console.log(err)
       };
@@ -138,10 +126,8 @@ app.put('/restaurant/:id', (req, res) => {
 
 // DELETE a restaurant
 app.delete('/restaurant/:id', (req, res) => {
-  //get the restaurant id from the url params
   let restaurantId = req.params.id;
 
-  // find the restaurant by id and delete it
   db.Restaurant.deleteOne({
       _id: restaurantId
     },

@@ -12,7 +12,7 @@ $(document).ready(function () {
         error: handleError
     });
 
-    // SUCCESS
+    // -----------------------------------------------RETRIEVE SUCCESS
     function handleSuccess(json) {
         var restaurants = json
 
@@ -54,7 +54,7 @@ $(document).ready(function () {
         });
     }
 
-    // ERROR
+    // ------------------------------------------------- RETRIEVE ERROR
     function handleError(e) {
         console.log('error', e);
         $('#restaurantTarget').text('Failed to load.');
@@ -88,7 +88,7 @@ $(document).ready(function () {
             error: handleError
         });
 
-        // SUCCESS
+        // -----------------------------------------------CREATE SUCCESS
         function handleSuccess(json) {
             var restaurant = json
 
@@ -129,7 +129,7 @@ $(document).ready(function () {
                 });
         }
 
-        // ERROR
+        // ----------------------------------------------------CREATE ERROR
         function handleError(e) {
             console.log('error', e);
             $('#restaurantTarget').text('Failed to load.');
@@ -138,7 +138,7 @@ $(document).ready(function () {
 
     
 
-    // -------------------------------------------------------UPDATE
+    // -------------------------------------------------------UPDATE---------------------------------------
     $('#restaurant').on('click','.update', function (){
         console.log($(this));
         var id = $(this).rating ("id");
@@ -155,7 +155,9 @@ $(document).ready(function () {
                             <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
                     </article>
                     <div class="card-action" style="height:6em;">
-                        <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
+                        <a href="${restaurant.website}">${restaurant.name}</a>
+                        <i id="${restaurant._id}" class="material-icons delete-icon right">close</i>
+                        <br>                        
                     </div>
                 </div>
             </div>`);
@@ -171,13 +173,13 @@ $(document).ready(function () {
         success: updatedRating,
         error: handleError,
     })
-
+    //---------------------------------------UPDATE SUCCESS 
     function updatedRatingSuccess (json) {
         var restaurant = json;
         console.log (restaurant);
         window.location.reload();
     };
-        // ERROR
+        //----------------------------------- UPDATE ERROR
         function handleError(e) {
             console.log('error', e);
             $('#restaurantTarget').text('Failed to load.');

@@ -5,11 +5,12 @@
 body {
     width: 100%;
 }
+
 h1,
 h2,
 h3,
 h4,
- {
+    {
     font-family: "Montserrat", sans-serif;
 }
 
@@ -18,8 +19,8 @@ h4 {
 }
 
 .s8 {
-    font-weight:900;
-    margin-right:12.5%;
+    font-weight: 900;
+    margin-right: 12.5%;
     margin-left: 23px !important;
 }
 
@@ -57,7 +58,6 @@ ul a {
     background-color: rgba(119, 119, 119, 0.05);
     margin-top: -2em;
     height: 10em;
-    /* border-bottom: 2px solid #FF6E69; */
 }
 
 
@@ -78,6 +78,7 @@ ul a {
 .recent-restaurants {
     margin-top: 5em;
 }
+
 .card-image img {
     height: 300px;
 }
@@ -85,9 +86,6 @@ ul a {
 .card-content {
     margin-top: -1em;
 }
-
-
-
 
 p {
     font-size: 1rem;
@@ -106,9 +104,11 @@ p {
 .row {
     margin-top: 2em;
 }
+
 .restaurant-card {
     transition: all .2s ease-in-out;
 }
+
 .restaurant-card:hover {
     transform: scale(1.02)
 }
@@ -117,16 +117,14 @@ p {
 
 @media only screen and (max-width: 588px) {
     .about-me {
-        height:100px;
+        height: 100px;
     }
-    
+
     .about-me-text h5 {
         font-size: 14px;
         margin-top: 8%;
         font-weight: 600;
     }
-
-
 }
 
 @media only screen and (max-width: 600px) {
