@@ -24,6 +24,8 @@ h3 {
     height: 300px;
 }
 
+
+
 .hidden {
     visibility: hidden;
 }
@@ -105,7 +107,7 @@ p i {
 
 /* MEDIA QUERIES */
 
-@media only screen and (max-width: 1152px) {
+@media only screen and (min-width: 1152px) {
     .star-container {
         width: 100%;
         display: flex;
@@ -121,22 +123,36 @@ p i {
 }
 
 
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 992px) {
+    .card-section {
+        margin-left: 0%;
+    }
+    
+    .card-image img {
+        height: 150px;
+    }
+
+    .card-title {
+        height: 20px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+@media only screen and (min-width: 600px) {
+
     .card-section {
         margin-right: 25%;
-        margin-left: 15%;
+        height: 50%;
         display: flex;
         flex-wrap: wrap;
     }
-}
-
-@media only screen and (max-width: 600px) {
-    .card-image img {
-        height: 450px;    
-    }
 
     #restaurant {
-        margin-left: 0%;
+        width:100%;
     }
 
     .h6 {
