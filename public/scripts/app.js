@@ -21,7 +21,7 @@ $(document).ready(function () {
                 <div class="col s12 m6 l4 left">
                     <div class="card">
                         <div class="card-image">
-                            <img src=${restaurant.image} class="responsive-image">
+                            <img src=${restaurant.image} class="responsive-image"">
                             <span class="card-title" style="height:75px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
                         <article class="card-content">
@@ -94,7 +94,7 @@ $(document).ready(function () {
 
             console.log(restaurant.image);
             $('#restaurant').append(`
-            <div class="col s12 m5 l3 pull-m1 pull-l1 left">
+            <div class="col s12 m6 l4 left">
                     <div class="card">
                         <div class="card-image">
                             <img src=${restaurant.image} class="responsive-image">
