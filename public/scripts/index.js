@@ -12,7 +12,6 @@ function onSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     $('.profile-button').css('display', 'inline-block');
     $('.signout-button').css('display', 'inline-block');
-    makeBalls();
 }
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
