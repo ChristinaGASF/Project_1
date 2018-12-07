@@ -1,3 +1,15 @@
+.nav-wrapper {
+    background-color: #BC0402;
+}
+
+ul a {
+    font-family: 'PT Serif', serif;
+}
+
+.brand-logo {
+    margin-left: 2%;
+}
+
 body {
     background-image: url('/images/homebg.jpg');
     background-size: cover;

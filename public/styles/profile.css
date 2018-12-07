@@ -115,6 +115,20 @@ p {
 
 /* MEDIA QUERIES */
 
+@media only screen and (max-width: 588px) {
+    .about-me {
+        height:100px;
+    }
+    
+    .about-me-text h5 {
+        font-size: 14px;
+        margin-top: 8%;
+        font-weight: 600;
+    }
+
+
+}
+
 @media only screen and (max-width: 600px) {
     .profile-pic {
         margin-left: -20%;

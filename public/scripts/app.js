@@ -4,7 +4,7 @@ var allrestaurant = [];
 var rootUrl = "http://localhost:3000/"
 $(document).ready(function () {
 
-// GET ALL 
+// -----------------------------------------------------------GET ALL 
     $.ajax({
         method: 'GET',
         url: rootUrl + 'restaurant',
@@ -18,21 +18,39 @@ $(document).ready(function () {
 
         restaurants.forEach(restaurant => {
             $('#restaurant').append(`
-                <div class="col s12 m3 l2 push-m1 push-l1 left">
+                <div class="col s12 m6 l4 left">
                     <div class="card">
                         <div class="card-image">
-                            <img src=${restaurant.image} class="responsive-image">
-                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
+                            <img src=${restaurant.image} class="responsive-image"">
+                            <span class="card-title" style="height:75px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
                         <article class="card-content">
-                            <h6>${restaurant.type}</h6>
-                            <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                            <section class="card-head">
+                                <h6>${restaurant.type}</h6>
+                            </section>
+                                <div class="star-container">
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                </div>
                         </article>
                         <div class="card-action" style="height:6em;">
                         <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
                         </div>
                     </div>
                 </div>`);
+                let stars = $(`.${restaurant._id}`)
+                let count = 0
+                stars.each( function(star){
+                    
+                    if (count >= restaurant.rating)
+                        return false;
+
+                    $(this).removeClass('unchecked').addClass('checked')
+                    count++
+                });
         });
     }
 
@@ -42,8 +60,8 @@ $(document).ready(function () {
         $('#restaurantTarget').text('Failed to load.');
     }
 
-    // });
 
+// -------------------------------------------- CREATE NEW RECOMMENDATION 
     // ON CLICK
     $('form').on('submit', function (e) {
         e.preventDefault();
@@ -56,7 +74,12 @@ $(document).ready(function () {
             website: $('#website').val()
         };
 
-        // CREATE NEW RECOMMENDATION 
+        if (recommend.rating > 5 || recommend.rating < 1) {
+            alert("Please rate on scale of 1-5");
+            return;
+        }
+
+    
         $.ajax({
             method: 'POST',
             url: rootUrl + 'restaurant',
@@ -70,23 +93,40 @@ $(document).ready(function () {
             var restaurant = json
 
             console.log(restaurant.image);
-            // return a string built using a template literal
             $('#restaurant').append(`
-                <div class="col s12 m3 l2 push-m1 push-l1 left">
+            <div class="col s12 m6 l4 left">
                     <div class="card">
                         <div class="card-image">
                             <img src=${restaurant.image} class="responsive-image">
-                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
+                            <span class="card-title" style="height:75px; width: 100%;"><h6>${restaurant.name}</h6></span>
                         </div>
                         <article class="card-content">
-                            <h6>${restaurant.type}</h6>
-                            <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                            <section class="card-head">
+                                <h6>${restaurant.type}</h6>
+                            </section>
+                                <div class="star-container">
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                </div>            
                         </article>
                         <div class="card-action" style="height:6em;">
                         <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
                         </div>
                     </div>
                 </div>`);
+                let stars = $(`.${restaurant._id}`)
+                let count = 0
+                stars.each( function(star){
+                    
+                    if (count >= restaurant.rating)
+                        return false;
+
+                    $(this).removeClass('unchecked').addClass('checked')
+                    count++
+                });
         }
 
         // ERROR
@@ -96,34 +136,29 @@ $(document).ready(function () {
         }
     })
 
-    // DELETE
+    
 
-
-    $('#restaurant').on('click', '.delete-icon', function () {
-
-        // when user clicks delete, grab the id
-        var id = $(this).attr('id');
-        console.log(id);
-        $.ajax({
-            method: 'DELETE',
-            url: `${rootUrl}restaurant/${id}`,
-            success: deleteSuccess,
-            error: handleError
-        });
-    });
-
-    function deleteSuccess(json) {
-        window.location.reload();
-        console.log(json);
-    };
-
-    // UPDATE
-// .update assigned to STAR value?? figure out how to append to filled in Stars with CSS
+    // -------------------------------------------------------UPDATE
     $('#restaurant').on('click','.update', function (){
         console.log($(this));
         var id = $(this).rating ("id");
     
-    $(this).rating.append
+    $('restaurant.rating').append(`
+            <div class="col s12 m5 l2 push-m1 push-l1 left">
+                <div class="card">
+                    <div class="card-image">
+                        <img src=${restaurant.image} class="responsive-image">
+                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
+                    </div>
+                    <article class="card-content">
+                            <h6>${restaurant.type}</h6>
+                            <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                    </article>
+                    <div class="card-action" style="height:6em;">
+                        <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
+                    </div>
+                </div>
+            </div>`);
 
     var newRating = {
         rating: $('#ratingUpdate').val()
@@ -148,5 +183,25 @@ $(document).ready(function () {
             $('#restaurantTarget').text('Failed to load.');
         }
     })
+
+    //------------------------------------------------------- DELETE
+
+
+    $('#restaurant').on('click', '.delete-icon', function () {
+
+        var id = $(this).attr('id');
+        console.log(id);
+        $.ajax({
+            method: 'DELETE',
+            url: `${rootUrl}restaurant/${id}`,
+            success: deleteSuccess,
+            error: handleError
+        });
+    });
+
+    function deleteSuccess(json) {
+        window.location.reload();
+        console.log(json);
+    };
 
 });
