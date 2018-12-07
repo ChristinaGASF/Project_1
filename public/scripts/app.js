@@ -106,11 +106,11 @@ $(document).ready(function () {
                                 <h6>${restaurant.type}</h6>
                             </section>
                                 <div class="star-container">
-                                    <span class="${restaurant._id} fa fa-star "></span>
-                                    <span class="${restaurant._id} fa fa-star "></span>
-                                    <span class="${restaurant._id} fa fa-star "></span>
-                                    <span class="${restaurant._id} fa fa-star "></span>
-                                    <span class="${restaurant._id} fa fa-star "></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
                                 </div>            
                         </article>
                         <div class="card-action" style="height:6em;">
@@ -118,6 +118,16 @@ $(document).ready(function () {
                         </div>
                     </div>
                 </div>`);
+                let stars = $(`.${restaurant._id}`)
+                let count = 0
+                stars.each( function(star){
+                    
+                    if (count >= restaurant.rating)
+                        return false;
+
+                    $(this).removeClass('unchecked').addClass('checked')
+                    count++
+                });
         }
 
         // ERROR
