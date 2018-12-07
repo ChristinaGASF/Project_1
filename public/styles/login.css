@@ -45,7 +45,7 @@ body {
     }
   }
 
-  .buttons {
+.buttons {
     display: flex;
 }
 
@@ -101,7 +101,7 @@ body {
 }
 
 @media all and (max-width: 400px) {
-     .buttons { 
-         flex-direction: column; 
-        } 
-    }
+    .buttons { 
+        flex-direction: column; 
+    } 
+}
