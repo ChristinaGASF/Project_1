@@ -1,14 +1,3 @@
-function makeBalls(){
-    console.log('balls')
-    let color = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
-
-    for (let i=6; i>=0; i--) {
-    $(".top").append(
-        `<div class="ball" style="background-color:${color[i]}"><h3 id="number">${i+1}</h3><div>`
-        )
-    }
-}
-
 function resetWindow() {
     location.reload();
 }
