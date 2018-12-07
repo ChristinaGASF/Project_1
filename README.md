@@ -21,7 +21,8 @@ Food Inspired Color Palette:
 
 ### BONUS:
 ### *Front-End Data Validation
-### *The app will pop up with a sign in window that prompts the user to log in using google account. Here is how it works:
+### *Log in using Google account. 
+Here is how it works:
 <blockquote>
                  The OAuth 2.0 Authorization Framework
 
