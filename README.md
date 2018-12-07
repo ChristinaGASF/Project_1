@@ -20,7 +20,8 @@ Food Inspired Color Palette:
 <img src=https://github.com/ChristinaGASF/Project_1/blob/master/public/images/Color%2BPalette%2BParfait.jpg>
 
 ### BONUS:
-The app will pop up with a sign in window that prompts the user to log in using google account. Here is how it works:
+### *Front-End Data Validation
+### *The app will pop up with a sign in window that prompts the user to log in using google account. Here is how it works:
 <blockquote>
                  The OAuth 2.0 Authorization Framework
 
