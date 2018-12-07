@@ -194,7 +194,8 @@ $(document).ready(function () {
         error: handleError,
     })
     //---------------------------------------UPDATE SUCCESS 
-    function updatedRatingSuccess (json) {
+    
+    //function updatedRatingSuccess (json) {
         var restaurant = json;
         console.log (restaurant);
         window.location.reload();
