@@ -1,7 +1,20 @@
 # Project One [Foods-To-Do App]
 #### This project is being developed to fulfill the requirement to graduate the WDI course at General Assembly (SF). The project is an assignment to be be done in a group that has Bijaya, Christina and Kenny as members.
 
-Introduction to the Project:
+### Technologies Requirements:
+* Express API - both HTML and JSON endpoints
+* Integrating Google Sign-In into web app (Federated login concept)
+* RESTful Routes - CRUD routes using the REST convention
+* AJAX - fetch JSON data from the backend
+* jQuery - render data on the client-side
+* Template strings
+* MongoDB - with at least two models 
+* Git 50+ commits 
+* Professional-looking code
+* CSS framework to make front-end snazzy
+* Heroku - deployed
+* A README.md 
+
 
 The app will pop up with a sign in window that prompts the user to log in using google account. Here is how it works:
 <blockquote>
@@ -22,24 +35,13 @@ Once signed in the user can navigate to the profile page and other contents.
 
 Authors have tried strictly to stay within the manifest that school provided that includes responsiveness of all the pages.
 
-Instructors Isha Arora and Dalton Hart both played role helping the authors create this project,especially towards writing the code in modules and using git commands. 
+Instructors Isha Arora and Dalton Hart both played role helping the authors create this project,especially towards writing the code in modules and using git commands.
 
-### Technologies Requirements:
-* Express API - both HTML and JSON endpoints
-* Integrating Google Sign-In into web app (Federated login concept)
-* RESTful Routes - CRUD routes using the REST convention
-* AJAX - fetch JSON data from the backend
-* jQuery - render data on the client-side
-* Template strings
-* MongoDB - with at least two models 
-* Git 50+ commits 
-* Professional-looking code
-* CSS framework to make front-end snazzy
-* Heroku - deployed
-* A README.md 
-
-Color Palette:
+Food Inspired Color Palette:
 * #BC0402, #FF6E69, #ECBB5C, #D4CAB1, #2A222D
+<img src=https://github.com/ChristinaGASF/Project_1/blob/master/public/images/Color%2BPalette%2BParfait.jpg>
+
+
 
 Some interesting clips of code:
 
