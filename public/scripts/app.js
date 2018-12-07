@@ -4,7 +4,7 @@ var allrestaurant = [];
 var rootUrl = "http://localhost:3000/"
 $(document).ready(function () {
 
-// GET ALL 
+// -----------------------------------------------------------GET ALL 
     $.ajax({
         method: 'GET',
         url: rootUrl + 'restaurant',
@@ -93,7 +93,6 @@ $(document).ready(function () {
             var restaurant = json
 
             console.log(restaurant.image);
-            // return a string built using a template literal
             $('#restaurant').append(`
             <div class="col s12 m4 l3 pull-m1 pull-l1 left">
                     <div class="card">
@@ -140,13 +139,10 @@ $(document).ready(function () {
     
 
     // -------------------------------------------------------UPDATE
-// .update assigned to STAR value?? figure out how to append to filled in Stars with CSS
     $('#restaurant').on('click','.update', function (){
         console.log($(this));
         var id = $(this).rating ("id");
     
-    // $(this).rating.append
-
     $('restaurant.rating').append(`
             <div class="col s12 m3 l2 push-m1 push-l1 left">
                 <div class="card">
@@ -193,7 +189,6 @@ $(document).ready(function () {
 
     $('#restaurant').on('click', '.delete-icon', function () {
 
-        // when user clicks delete, grab the id
         var id = $(this).attr('id');
         console.log(id);
         $.ajax({
