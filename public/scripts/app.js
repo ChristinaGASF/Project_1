@@ -1,7 +1,7 @@
 console.log("Sanity Check: JS is working!");
 var $restaurantList;
 var allrestaurant = [];
-var rootUrl = "http://localhost:3000/"
+var rootUrl = "/"
 $(document).ready(function () {
 
 // GET ALL 
