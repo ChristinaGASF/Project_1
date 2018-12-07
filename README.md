@@ -41,6 +41,27 @@ Authors have tried strictly to stay within the manifest that school provided tha
 
 Instructors Isha Arora and Dalton Hart both played role helping the authors create this project,especially towards writing the code in modules and using git commands.
 
+* Part of google OAuth2 sign in method:
+
+```
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+```
+
+
 Some interesting clips of code:
 
 * Part of Crud functionality:
@@ -61,24 +82,5 @@ app.delete('/restaurant/:id', (req, res) => {
       res.json(deletedId);
     });
 });
-```
-* Part of google OAuth2 sign in method:
-
-```
-    <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        }
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
-        }
-    </script>
 ```
 
