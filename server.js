@@ -57,7 +57,7 @@ app.get('/profile', (req, res) => {
 //     })
 //   });
 
-// PROFILE (location? should this be in user.js?)
+// PROFILE 
 app.get('./user', (req, res) => {
   res.json({
     name: "Homer Jay Simpson",
@@ -139,7 +139,7 @@ app.delete('/restaurant/:id', (req, res) => {
     });
 });
 
-//SERVER
+// SERVER
 // listen on the port that Heroku prescribes (process.env.PORT) OR port 3000
 app.listen(process.env.PORT || 3000, () => {
   console.log('Express server is up and running on http://localhost:3000/');
