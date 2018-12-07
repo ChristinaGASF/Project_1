@@ -138,34 +138,54 @@ $(document).ready(function () {
 
     
 
-    // -------------------------------------------------------UPDATE---------------------------------------
-    $('#restaurant').on('click','.update', function (){
+    // -------------------------------------------------------UPDATE
+    $('#restaurant').on('click','.update', function (e){
+        e.preventDefault();
         console.log($(this));
-        var id = $(this).rating ("id");
-    
-    $('restaurant.rating').append(`
-            <div class="col s12 m5 l2 push-m1 push-l1 left">
+
+     //   var newRating = $(this).rating ("id");
+     //   $('#rating').val(),
+
+        $('#restaurant').append(`
+        <div class="col s12 m6 l4 left">
                 <div class="card">
                     <div class="card-image">
                         <img src=${restaurant.image} class="responsive-image">
-                            <span class="card-title" style="height:78px; width: 100%;"><h6>${restaurant.name}</h6></span>
+                        <span class="card-title" style="height:75px; width: 100%;"><h6>${restaurant.name}</h6></span>
                     </div>
                     <article class="card-content">
+                        <section class="card-head">
                             <h6>${restaurant.type}</h6>
-                            <p class="rating">Rating: ${restaurant.rating} <i id="update" class="hidden material-icons right">create</i></p>
+                        </section>
+                            <div class="star-container">
+                                <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                <span class="${restaurant._id} fa fa-star unchecked"></span>
+                            </div>            
                     </article>
                     <div class="card-action" style="height:6em;">
-                        <a href="${restaurant.website}">${restaurant.name}</a>
-                        <i id="${restaurant._id}" class="material-icons delete-icon right">close</i>
-                        <br>                        
+                    <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
                     </div>
                 </div>
             </div>`);
+            let stars = $(`.${restaurant._id}`)
+            let count = 0
+            stars.each( function(star){
+                
+                if (count >= restaurant.rating)
+                    return false;
 
-    var newRating = {
-        rating: $('#ratingUpdate').val()
-    }
-    console.log(updatedRating);
+                $(this).removeClass('unchecked').addClass('checked')
+                count++
+            });
+// onclick of star grab new value assigned to restaurantID, append new Rating to value in db
+// newRating no updating storing to db ... updatedRatingSucess also needs to be addressed
+//    var newRating = {
+//        rating: $('#ratingUpdate').val()
+//    }
+//    console.log(updatedRating);
 
     $.ajax({
         method:'PUT',
