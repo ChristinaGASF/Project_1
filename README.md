@@ -61,8 +61,7 @@ Instructors Isha Arora and Dalton Hart both played role helping the authors crea
     </script>
 ```
 
-
-Some interesting clips of code:
+### Some interesting clips of code:
 
 * Part of Crud functionality:
 ```
