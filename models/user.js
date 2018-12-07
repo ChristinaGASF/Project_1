@@ -12,6 +12,6 @@ var userSchema = new Schema({
   homeTown: String,
   });
 
- var restaurant = mongoose.model('restaurant', restaurantSchema);
+ var user = mongoose.model('user', userSchema);
 
-module.exports = restaurant;
+module.exports = user;
