@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.top {
+/* .top {
     display: flex;
     justify-content: space-evenly;
     flex-flow: wrap row-reverse;
@@ -32,16 +32,12 @@ body {
     margin-top: 10px;
 }
 
-#number {
-    text-align: center;
-}
-
 @media all and (max-width: 399px) {
     header {
         align-items: center;  
       }
     }
-/*header with balls ends here*/
+header with balls ends here */
 .container {
     padding-top: 2%;
     display: flex;
@@ -137,10 +133,10 @@ body {
     color: lightskyblue;
 }
 
-.go-to-profile {
+/* .go-to-profile {
     width: 300px;
     height: 50px;
-}
+} */
 
 @media all and (max-width: 400px) {
      .buttons { 
