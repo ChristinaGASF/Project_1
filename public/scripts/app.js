@@ -4,7 +4,7 @@ var allrestaurant = [];
 var rootUrl = "http://localhost:3000/"
 $(document).ready(function () {
 
-// -----------------------------------------------------------GET ALL 
+// GET ALL 
     $.ajax({
         method: 'GET',
         url: rootUrl + 'restaurant',
@@ -12,7 +12,7 @@ $(document).ready(function () {
         error: handleError
     });
 
-    // -----------------------------------------------RETRIEVE SUCCESS
+// RETRIEVE SUCCESS
     function handleSuccess(json) {
         var restaurants = json
 
@@ -54,15 +54,13 @@ $(document).ready(function () {
         });
     }
 
-    // ------------------------------------------------- RETRIEVE ERROR
+// RETRIEVE ERROR
     function handleError(e) {
         console.log('error', e);
         $('#restaurantTarget').text('Failed to load.');
     }
 
-
-// -------------------------------------------- CREATE NEW RECOMMENDATION 
-    // ON CLICK
+// CREATE NEW RECOMMENDATION 
     $('form').on('submit', function (e) {
         e.preventDefault();
 
@@ -88,7 +86,7 @@ $(document).ready(function () {
             error: handleError
         });
 
-        // -----------------------------------------------CREATE SUCCESS
+// CREATE SUCCESS
         function handleSuccess(json) {
             var restaurant = json
 
@@ -129,13 +127,14 @@ $(document).ready(function () {
                 });
         }
 
-        // ----------------------------------------------------CREATE ERROR
+// CREATE ERROR
         function handleError(e) {
             console.log('error', e);
             $('#restaurantTarget').text('Failed to load.');
         }
     })
 
+// UPDATE SUCCESS 
     $('#restaurant').on('click','#star1', function (e){
         e.preventDefault();
         var list = $(this).attr('class').split(" ");
@@ -148,7 +147,6 @@ $(document).ready(function () {
                     success: updatedRatingSuccess,
                     error: handleError,
                 })
-                //---------------------------------------UPDATE SUCCESS 
                 
     });
 
@@ -164,7 +162,7 @@ $(document).ready(function () {
                     success: updatedRatingSuccess,
                     error: handleError,
                 })
-                //---------------------------------------UPDATE SUCCESS 
+
                 
     });
 
@@ -214,16 +212,15 @@ $(document).ready(function () {
         console.log (restaurant);
         window.location.reload();
     };
-        //----------------------------------- UPDATE ERROR
+
+    // UPDATE ERROR
         function handleError(e) {
             console.log('error', e);
             $('#restaurantTarget').text('Failed to load.');
         }
 
    
-    //------------------------------------------------------- DELETE
-
-
+    // DELETE
     $('#restaurant').on('click', '.delete-icon', function () {
 
         var id = $(this).attr('id');
@@ -240,5 +237,4 @@ $(document).ready(function () {
         window.location.reload();
         console.log(json);
     };
-
 });

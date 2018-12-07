@@ -15,7 +15,7 @@
 * Heroku - deployed
 * A README.md 
 
-### Project Idea: Ability to get, create, and save a food recommendations list. As well as update it's rating.
+### Project Idea: Ability to GET, CREATE, and SAVE a food recommendations list to a databease. As well as update it's rating through clickable stars.
 
 Food Inspired Color Palette:
 * #BC0402, #FF6E69, #ECBB5C, #D4CAB1, #2A222D
@@ -67,23 +67,20 @@ Instructors Isha Arora and Dalton Hart both played role helping the authors crea
 
 ### Some interesting clips of code:
 
-* Part of Crud functionality:
+* Part of CRUD functionality: STARS + UPDATE
 ```
-// DELETE a restaurant
-app.delete('/restaurant/:id', (req, res) => {
-  //get the restaurant id from the url params
-  let restaurantId = req.params.id;
-
-  // find the restaurant by id and delete it
-  db.Restaurant.deleteOne({
-      _id: restaurantId
-    },
-    (err, deletedId) => {
-      if (err) {
-        return console.log(err)
-      };
-      res.json(deletedId);
+    $('#restaurant').on('click','#star5', function (e){
+        e.preventDefault();
+        var list = $(this).attr('class').split(" ");
+        console.log(list);
+        let id = list[0];
+        $.ajax({
+                    method:'PUT',
+                    url: `${rootUrl}restaurant/${id}`,
+                    data: {"rating":5},
+                    success: updatedRatingSuccess,
+                    error: handleError,
+                })
     });
-});
 ```
 
