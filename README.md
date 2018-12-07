@@ -15,6 +15,10 @@
 * Heroku - deployed
 * A README.md 
 
+Food Inspired Color Palette:
+* #BC0402, #FF6E69, #ECBB5C, #D4CAB1, #2A222D
+<img src=https://github.com/ChristinaGASF/Project_1/blob/master/public/images/Color%2BPalette%2BParfait.jpg>
+
 
 The app will pop up with a sign in window that prompts the user to log in using google account. Here is how it works:
 <blockquote>
@@ -36,12 +40,6 @@ Once signed in the user can navigate to the profile page and other contents.
 Authors have tried strictly to stay within the manifest that school provided that includes responsiveness of all the pages.
 
 Instructors Isha Arora and Dalton Hart both played role helping the authors create this project,especially towards writing the code in modules and using git commands.
-
-Food Inspired Color Palette:
-* #BC0402, #FF6E69, #ECBB5C, #D4CAB1, #2A222D
-<img src=https://github.com/ChristinaGASF/Project_1/blob/master/public/images/Color%2BPalette%2BParfait.jpg>
-
-
 
 Some interesting clips of code:
 
