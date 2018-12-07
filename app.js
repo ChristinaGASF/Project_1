@@ -60,7 +60,6 @@ $(document).ready(function () {
         $('#restaurantTarget').text('Failed to load.');
     }
 
-
 // CREATE NEW RECOMMENDATION 
     $('form').on('submit', function (e) {
         e.preventDefault();
@@ -135,6 +134,7 @@ $(document).ready(function () {
         }
     })
 
+// UPDATE SUCCESS 
     $('#restaurant').on('click','#star1', function (e){
         e.preventDefault();
         var list = $(this).attr('class').split(" ");
@@ -147,7 +147,6 @@ $(document).ready(function () {
                     success: updatedRatingSuccess,
                     error: handleError,
                 })
-// UPDATE SUCCESS 
                 
     });
 
@@ -213,7 +212,8 @@ $(document).ready(function () {
         console.log (restaurant);
         window.location.reload();
     };
-        // UPDATE ERROR
+
+    // UPDATE ERROR
         function handleError(e) {
             console.log('error', e);
             $('#restaurantTarget').text('Failed to load.');
@@ -221,8 +221,6 @@ $(document).ready(function () {
 
    
     // DELETE
-
-
     $('#restaurant').on('click', '.delete-icon', function () {
 
         var id = $(this).attr('id');
@@ -239,5 +237,4 @@ $(document).ready(function () {
         window.location.reload();
         console.log(json);
     };
-
 });
