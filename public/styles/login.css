@@ -5,39 +5,6 @@ body {
     background-repeat: no-repeat;
 }
 
-/* .top {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: wrap row-reverse;
-    padding: 10px 0;
-    position: relative;
-    -webkit-animation: mymove 2s infinite; 
-    animation: mymove 2s infinite;
-}
-
-@-webkit-keyframes mymove {
-    from {left: 50px;}
-    to {right: 50px;}
-}
-
-@keyframes mymove {
-    from {left: 50px;}
-    to {right: 50px;}
-}
-
-.ball {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    margin-top: 10px;
-}
-
-@media all and (max-width: 399px) {
-    header {
-        align-items: center;  
-      }
-    }
-header with balls ends here */
 .container {
     padding-top: 2%;
     display: flex;
@@ -132,11 +99,6 @@ header with balls ends here */
 .intro:hover {
     color: lightskyblue;
 }
-
-/* .go-to-profile {
-    width: 300px;
-    height: 50px;
-} */
 
 @media all and (max-width: 400px) {
      .buttons { 
