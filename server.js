@@ -158,19 +158,3 @@ app.delete('/restaurant/:id', (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
   console.log('Express server is up and running on http://localhost:3000/');
 });
-
-/*
-details: "Not a valid origin for the client: https://intense-cliffs-61004.herokuapp.com 
-has not been whitelisted for client ID 480661915725-5nfits9a4bhkoeta9jnc71s8g97eubee.apps.googleusercontent.com. 
-Please go to https://console.developers.google.com/ and whitelist this origin for your project's client ID."
-error: "idpiframe_initialization_failed"
-
-Here is your client ID:
-480661915725-43rak6ngbved76if219rbt1u94ffpnm6.apps.googleusercontent.com
-480661915725-43rak6ngbved76if219rbt1u94ffpnm6.apps.googleusercontent.com
-
-Here is your client secret:
-hjw0h8II7VL4lzX1YZvc7Uzs
-hjw0h8II7VL4lzX1YZvc7Uzs
-hjw0h8II7VL4lzX1YZvc7Uzs
-*/
