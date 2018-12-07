@@ -19,7 +19,7 @@ Food Inspired Color Palette:
 * #BC0402, #FF6E69, #ECBB5C, #D4CAB1, #2A222D
 <img src=https://github.com/ChristinaGASF/Project_1/blob/master/public/images/Color%2BPalette%2BParfait.jpg>
 
-
+### BONUS:
 The app will pop up with a sign in window that prompts the user to log in using google account. Here is how it works:
 <blockquote>
                  The OAuth 2.0 Authorization Framework
