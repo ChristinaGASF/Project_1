@@ -83,4 +83,15 @@ Instructors Isha Arora and Dalton Hart both played role helping the authors crea
                 })
     });
 ```
+### Some fun CSS code:
+```
+.unchecked:hover ~ .unchecked {
+    color: #ECBB5C;
+    cursor: pointer;
+}
 
+.checked:hover ~ .checked {
+    color: lightgray;
+    cursor: pointer;
+}
+```
