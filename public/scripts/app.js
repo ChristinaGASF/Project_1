@@ -29,11 +29,11 @@ $(document).ready(function () {
                                 <h6>${restaurant.type}</h6>
                             </section>
                                 <div class="star-container">
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star1" class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star2" class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star3" class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star4" class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star5" class="${restaurant._id} fa fa-star unchecked"></span>
                                 </div>
                         </article>
                         <div class="card-action" style="height:6em;">
@@ -105,11 +105,11 @@ $(document).ready(function () {
                                 <h6>${restaurant.type}</h6>
                             </section>
                                 <div class="star-container">
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                    <span class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star1" class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star2" class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star3" class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star4" class="${restaurant._id} fa fa-star unchecked"></span>
+                                    <span id="star5" class="${restaurant._id} fa fa-star unchecked"></span>
                                 </div>            
                         </article>
                         <div class="card-action" style="height:6em;">
@@ -136,66 +136,80 @@ $(document).ready(function () {
         }
     })
 
-    
-
-    // -------------------------------------------------------UPDATE
-    $('#restaurant').on('click','.update', function (e){
+    $('#restaurant').on('click','#star1', function (e){
         e.preventDefault();
-        console.log($(this));
-
-     //   var newRating = $(this).rating ("id");
-     //   $('#rating').val(),
-
-        $('#restaurant').append(`
-        <div class="col s12 m6 l4 left">
-                <div class="card">
-                    <div class="card-image">
-                        <img src=${restaurant.image} class="responsive-image">
-                        <span class="card-title" style="height:75px; width: 100%;"><h6>${restaurant.name}</h6></span>
-                    </div>
-                    <article class="card-content">
-                        <section class="card-head">
-                            <h6>${restaurant.type}</h6>
-                        </section>
-                            <div class="star-container">
-                                <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                <span class="${restaurant._id} fa fa-star unchecked"></span>
-                                <span class="${restaurant._id} fa fa-star unchecked"></span>
-                            </div>            
-                    </article>
-                    <div class="card-action" style="height:6em;">
-                    <a href="${restaurant.website}"><i id="${restaurant._id}" class="material-icons right delete-icon">close</i>${restaurant.name}</a><br>                        
-                    </div>
-                </div>
-            </div>`);
-            let stars = $(`.${restaurant._id}`)
-            let count = 0
-            stars.each( function(star){
+        var list = $(this).attr('class').split(" ");
+        console.log(list);
+        let id = list[0];
+        $.ajax({
+                    method:'PUT',
+                    url: `${rootUrl}restaurant/${id}`,
+                    data: {"rating":1},
+                    success: updatedRatingSuccess,
+                    error: handleError,
+                })
+                //---------------------------------------UPDATE SUCCESS 
                 
-                if (count >= restaurant.rating)
-                    return false;
+    });
 
-                $(this).removeClass('unchecked').addClass('checked')
-                count++
-            });
-// onclick of star grab new value assigned to restaurantID, append new Rating to value in db
-// newRating no updating storing to db ... updatedRatingSucess also needs to be addressed
-//    var newRating = {
-//        rating: $('#ratingUpdate').val()
-//    }
-//    console.log(updatedRating);
+    $('#restaurant').on('click','#star2', function (e){
+        e.preventDefault();
+        var list = $(this).attr('class').split(" ");
+        console.log(list);
+        let id = list[0];
+        $.ajax({
+                    method:'PUT',
+                    url: `${rootUrl}restaurant/${id}`,
+                    data: {"rating":2},
+                    success: updatedRatingSuccess,
+                    error: handleError,
+                })
+                //---------------------------------------UPDATE SUCCESS 
+                
+    });
 
-    $.ajax({
-        method:'PUT',
-        url: `${rootUrl}restaurant/${id}`,
-        success: updatedRating,
-        error: handleError,
-    })
-    //---------------------------------------UPDATE SUCCESS 
-    
-    //function updatedRatingSuccess (json) {
+    $('#restaurant').on('click','#star3', function (e){
+        e.preventDefault();
+        var list = $(this).attr('class').split(" ");
+        console.log(list);
+        let id = list[0];
+        $.ajax({
+                    method:'PUT',
+                    url: `${rootUrl}restaurant/${id}`,
+                    data: {"rating":3},
+                    success: updatedRatingSuccess,
+                    error: handleError,
+                })
+    });
+
+    $('#restaurant').on('click','#star4', function (e){
+        e.preventDefault();
+        var list = $(this).attr('class').split(" ");
+        console.log(list);
+        let id = list[0];
+        $.ajax({
+                    method:'PUT',
+                    url: `${rootUrl}restaurant/${id}`,
+                    data: {"rating":4},
+                    success: updatedRatingSuccess,
+                    error: handleError,
+                })
+    });
+
+    $('#restaurant').on('click','#star5', function (e){
+        e.preventDefault();
+        var list = $(this).attr('class').split(" ");
+        console.log(list);
+        let id = list[0];
+        $.ajax({
+                    method:'PUT',
+                    url: `${rootUrl}restaurant/${id}`,
+                    data: {"rating":5},
+                    success: updatedRatingSuccess,
+                    error: handleError,
+                })
+    });
+    function updatedRatingSuccess (json) {
         var restaurant = json;
         console.log (restaurant);
         window.location.reload();
@@ -205,8 +219,8 @@ $(document).ready(function () {
             console.log('error', e);
             $('#restaurantTarget').text('Failed to load.');
         }
-    })
 
+   
     //------------------------------------------------------- DELETE
 
 

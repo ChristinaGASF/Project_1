@@ -7,11 +7,12 @@
 }
 
 ul a {
-    font-family: 'PT Serif', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .brand-logo {
     margin-left: 2%;
+    font-weight: 700;
 }
 
 h3 {

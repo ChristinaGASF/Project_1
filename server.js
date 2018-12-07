@@ -62,7 +62,7 @@ app.get('./user', (req, res) => {
   res.json({
     name: "Homer Jay Simpson",
     message: "D'oh!",
-    wife: "Marge Simpson",
+    spouse: "Marge Simpson",
     parentNames: "Abe Simpson + Mona Simpson",
     childrenNames: "Bart, Lisa, and Maggie",
     profileImage: "https://vignette.wikia.nocookie.net/simpsons/images/7/7f/Mmm.jpg/revision/latest?cb=20121205194537",
