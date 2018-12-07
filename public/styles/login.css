@@ -101,7 +101,8 @@ h3 {
     text-align: justify;
     font-size: 1.5em;
     color: white;
-}
+    background-color: rgba(0, 0, 0, 0.75);
+}   
 
 .intro:hover {
     color: lightskyblue;
